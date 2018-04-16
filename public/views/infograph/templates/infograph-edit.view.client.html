@@ -1,0 +1,164 @@
+<script src="../../../js/main.js"></script>
+<!-- custom right click menu -->
+<ul class='custom-menu'>
+    <li data-action = "delete">Delete</li>
+</ul>
+<!-- end of menu -->
+
+<!-- top nav -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a ng-click="model.logout()" class="navbar-link">
+                    <span class="glyphicon glyphicon-log-out"> Logout</span>
+                </a>
+                <!--<div id="account" class="dropdown">
+                    <a id="menu" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </div>-->
+            </div>
+            <div class="navbar-text">
+                <a class="navbar-link">
+                    <span class="glyphicon glyphicon-floppy-disk" stlyle="padding-right:10px"
+                          ng-click="model.updateInfograph()"> Save</span>
+                </a>
+            </div>
+            <div class="navbar-text">
+                <a class="navbar-link">
+                    <span class="glyphicon glyphicon-trash" stlyle="padding-right:10px"
+                          ng-click="model.deleteInfograph()"> Delete</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+<div class="container-fluid">
+    <div id="wrapper" data-spy="scroll" data-target="#spy" class="">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper" class="">
+                    <nav id="spy">
+                        <ul class="sidebar-nav nav">
+                            <li>
+                                <img class="logo" src="../../../assets/Logo.png" />
+                            </li>
+                            <li> <a href="#/dashboard" data-target="#">
+                                <span class="fa fa-home solo">Dashboard</span></a>
+                            </li>
+                            <li> <a onclick="toggleSidepanel('#graphics')">
+                                <span class="fa fa-image solo">Graphics</span>
+                            </a>
+                            </li>
+                            <li class=""> <a onclick="toggleSidepanel('#shapes')">
+                                <span class="fa fa-image solo">Shapes</span>
+                            </a>
+                            <li class=""> <a onclick="toggleSidepanel('#bg')" data-scroll="" class="">
+                                <span class="fa fa-th solo">Background</span>
+                            </a>
+                            </li>
+                            <li class=""> <a onclick="toggleSidepanel('#txt')" data-scroll="" data-target="#" class="">
+                                <span class="fa fa-text-width solo">Text</span>
+                            </a>
+
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+            <!-- Page content -->
+            <div class="col-md-8 col-sm-12">
+                <!-- Alerts -->
+                <div class="alert alert-danger alert-dismissable fade in" ng-show="model.error">
+                    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{model.error}}</div>
+                <div class="alert alert-success alert-dismissable fade in" ng-show="model.message">
+                    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{model.message}}</div>
+                <!-- End of Alerts -->
+                <div class="header" id="infoTitle" contenteditable="true">{{model.infographic.name}}</div>
+                <div id="page-content-wrapper" class="">
+                    <div id="canvas" class="page-content inset">
+
+                        <!-- Load all components -->
+                        <div id="components" ng-repeat="component in model.components" style="position: relative">
+                            <div class="row draggable widget" ng-attr-id="{{component._id}}"
+                                 style="position: absolute; left: {{component.left}}; top: {{component.top}}">
+                                <a ng-click="model.deleteComponent(component._id)">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
+                                <div ng-switch="component.type">
+                                    <div class="txtDiv" ng-switch-when="TEXT">
+                                        <ng-include src="'views/components/templates/text-list.view.client.html'">
+                                    </div>
+                                    <div ng-switch-when="JUMBO">
+                                        <ng-include src="'views/components/templates/text-list.view.client.html'">
+                                    </div>
+                                    <div ng-switch-when="ANCHOR">
+                                        <ng-include src="'views/components/templates/text-list.view.client.html'">
+                                    </div>
+                                    <div ng-switch-when="SHAPE">
+                                        <ng-include src="'views/components/templates/shape-list.view.client.html'">
+                                    </div>
+                                    <div ng-switch-when="IMAGE">
+                                        <ng-include src="'views/components/templates/image-list.view.client.html'">
+                                    </div>
+                                </div>
+
+                                <!--
+                                </div>
+                                <div ng-switch-when="LINE">
+                                    <ng-include src="'views/widget/templates/widget-html.view.client.html'">
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of canvas -->
+
+            <!-- Sidebar 2 -->
+            <div class="col-md-2">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper2" style="display:none">
+                    <nav id="spy2">
+                        <ul class="sidebar-nav nav">
+                            <li class="sidebar-brand active text-center">
+                                <span class="fa fa-pencil-square-o solo">Edit</span>
+                            </li>
+                        </ul>
+                        <div id="bg" class="editor">
+                            <ng-include src="'views/components/templates/editors/background-edit.view.client.html'">
+                        </div>
+                        <div id="txt" class="editor">
+                            <ng-include src="'views/components/templates/editors/text-new.view.client.html'">
+                        </div>
+                        <div id="graphics" class="editor">
+                            <ng-include src="'views/components/templates/editors/image-edit.view.client.html'">
+                        </div>
+                        <div id="shapes" class="editor">
+                            <ng-include src="'views/components/templates/editors/shape-edit.view.client.html'">
+                        </div>
+                        <!--<div id="lines" class="editor">
+
+                        </div>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

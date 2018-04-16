@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Infographer" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta property="og:url"           content="http://infographer.herokuapp.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Infographer" />
+    <meta property="og:description"   content="Present data better" />
+    <meta property="og:image"         content="https://raw.githubusercontent.com/aksh4y/Infographer/master/public/assets/Logo_sm.png" />
+    <meta property="fb:app_id"         content="1670289183274069" />
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:100" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js"
+            id="dropboxjs" data-app-key="z5y9w359xsmx3wg"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-colorpicker.min.js"></script>
+    <script src="js/print.js"></script>
+    <script src="js/html2canvas.svg.js"></script>
+    <script src="js/png.js"></script>
+    <script src="js/png_support.js"></script>
+    <script src="js/addhtml.js"></script>
+    <script src="js/addimage.js"></script>
+    <script src="js/zlib.js"></script>
+    <script src="js/loadImg.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>-->
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!-- Directives -->
+    <script src="directives/wam-directives.js"></script>
+
+    <!-- Controllers -->
+    <script src="views/user/controllers/user.controller.client.js"></script>
+    <script src="views/user/controllers/user.dashboard.client.js"></script>
+    <script src="views/infograph/controller/infograph.controller.client.js"></script>
+    <script src="views/admin/controllers/admin.controller.client.js"></script>
+    <script src="views/components/controllers/component.controller.client.js"></script>
+
+    <!-- Services -->
+    <script src="services/user.service.client.js"></script>
+    <script src="services/infographic.service.client.js"></script>
+    <script src="services/flickr.service.client.js"></script>
+    <script src="services/component.service.client.js"></script>
+
+    <title>UniChat: Chat Beyond Boundaries</title>
+</head>
+<body class="as-body-padding">
+<div class="se-pre-con"></div>  <!-- Loader gif -->
+<div ng-view></div> <!-- angular view -->
+</body>
+</html>

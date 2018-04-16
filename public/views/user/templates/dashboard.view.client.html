@@ -1,0 +1,70 @@
+<script>
+    function closeWarning() {
+        $('#warning').remove();
+    }
+</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right hidden-xs hidden-sm">
+                <a href="#/creator"
+                   class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-left">
+                <a href="#/profile" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div ng-if="model.infographics.length == 0">
+    <h3 class="text-center">No infographics created</h3>
+</div>
+
+<div class="container-fluid as-bottom-pad" style="margin-top:50px;">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8 text-center">
+        <div ng-repeat="infographic in model.infographics" style="float:left; padding-right:10px">
+            <div class="infograph-container">
+            <img class="infograph-image" src="../../../assets/graph_2.png" width="300px" height="424px"/>
+            <div class="dashboard-view">
+                <a href="#/viewer/{{infographic._id}}" class="infograph-text">View</a>
+            </div>
+                <div class="dashboard-edit hidden-xs hidden-sm">
+                <a href="#/editor/{{infographic._id}}" class="infograph-text">Edit</a>
+            </div>
+            <br/>
+        </div>
+        <div class="info-title">{{infographic.name}}</div>
+    </div>
+</div>
+<div class="col-xs-2"></div>
+</div>
+<div id="warning" class="col-xs-12 col-sm-12 hidden-md hidden-lg browserError text-center">
+    <h1 style="vertical-align: middle">Your browser is too small</h1>
+    <h3>Infographer works best on browsers that are at least 940px wide. You can however view and share your previously
+        created infographics in A4 size.</h3>
+    <br/>
+    <button onclick="closeWarning()" class="btn-warning">Close</button>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#/profile" class="navbar-link">
+                      <span class="glyphicon glyphicon-user">
+                      </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
