@@ -1,6 +1,6 @@
 (function(){
     angular
-        .module("Infographer")
+        .module("UniChat")
         .factory('UserService', UserService);
     
     function UserService($http) {
@@ -14,9 +14,12 @@
             "findAllUsers" : findAllUsers,
             "findUserById": findUserById,
             "findUserByUsername": findUserByUsername,
+            "findUsersByUsername": findUsersByUsername,
             "updateUser": updateUser,
             "deleteUser": deleteUser,
-            "recover": recover
+            "recover": recover,
+            "addFriend": addFriend,
+            "removeFriend": removeFriend
         };
         return api;
 
@@ -64,6 +67,21 @@
                 });
         }
 
+        function  addFriend(userId, friend) {
+            return $http.put('/api/user/'+userId+"/friend", friend)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function removeFriend(userId, friend) {
+            console.log("remove friend client");
+            return $http.put('/api/user/'+userId+"/friend/remove", friend)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
         function loggedIn() {
             return $http.get('/api/loggedIn')
                 .then(function (response) {
@@ -82,6 +100,10 @@
 
         function findUserByUsername(username) {
             return $http.get("/api/user?username="+username);
+        }
+
+        function  findUsersByUsername(username) {
+            return $http.get("/api/users?username="+username);
         }
 
         function deleteUser(userId) {

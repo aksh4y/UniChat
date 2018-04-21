@@ -5,16 +5,16 @@
 module.exports = function () {
 
     var userModel    = require("./user/user.model.server")();
-    var infographicModel = require("./infographic/infographic.model.server")();
-    var componentModel = require("./component/component.model.server")();
+    var chatModel = require("./chat/chat.model.server")();
+    var messageModel = require("./message/message.model.server")();
 
     var model = {
         userModel    : userModel,
-        infographicModel : infographicModel,
-        componentModel: componentModel
+        chatModel : chatModel,
+        messageModel: messageModel
     };
     userModel.setModel(model);
-    infographicModel.setModel(model);
-    componentModel.setModel(model);
+    chatModel.setModel(model);
+    messageModel.setModel(model);
     return model;
 };

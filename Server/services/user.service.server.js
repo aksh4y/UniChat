@@ -1,5 +1,5 @@
 /**
- * Created by Akshay on 2/17/2017.
+ * Created by Akshay on 4/17/2018.
  */
 module.exports = function (app, userModel) {
 
@@ -26,6 +26,7 @@ module.exports = function (app, userModel) {
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserByUserId);
     app.get('/api/user/:username', findUserByUsername);
+    app.get('/api/users', findUsersByUsername);
     app.post('/api/isAdmin', isAdmin);
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", unregisterUser);
@@ -34,6 +35,8 @@ module.exports = function (app, userModel) {
     app.post('/api/logout', logout);
     app.get('/api/loggedIn', loggedIn);
     app.post('/api/recover', recover);
+    app.put('/api/user/:userId/friend', addFriend);
+    app.put('/api/user/:userId/friend/remove', removeFriend);
     app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
     app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
     app.get('/google/oauth/callback',
@@ -91,15 +94,15 @@ module.exports = function (app, userModel) {
 
 
     passport.use(new FacebookStrategy({
-            clientID: process.env.FACEBOOK_CLIENT_ID,
-            clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-            callbackURL: "/auth/facebook/callback",
-            profileFields: ['id', 'displayName', 'email'],
-            enableProof: true
-        }, facebookStrategy));
+        clientID: process.env.FACEBOOK_CLIENT_ID,
+        clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+        callbackURL: "/auth/facebook/callback",
+        profileFields: ['id', 'displayName', 'email'],
+        enableProof: true
+    }, facebookStrategy));
 
     function facebookStrategy(token, refreshToken, profile, cb) {
-       // console.log(profile);
+        // console.log(profile);
         userModel
             .findUserByFacebookId(profile.id)
             .then(
@@ -132,7 +135,7 @@ module.exports = function (app, userModel) {
                     if (err) { return cb(err); }
                 }
             );
-        }
+    }
 
     var googleConfig = {
         clientID     : process.env.GOOGLE_CLIENT_ID,
@@ -265,6 +268,14 @@ module.exports = function (app, userModel) {
         }
     }
 
+    function findUsersByUsername(req, res) {
+        var username = req.query.username;
+        userModel.findUsersByUsername(username)
+            .then(function (users) {
+                res.json(users);
+            });
+    }
+
     function loggedIn(req, res) {
         res.send(req.isAuthenticated() ? req.user : '0');
     }
@@ -277,6 +288,30 @@ module.exports = function (app, userModel) {
                 res.json(user);
             }, function (err) {
                 res.sendStatus(404).send(err);
+            });
+    }
+
+    function addFriend(req, res) {
+        var userId = req.params['userId'];
+        var friend = req.body;
+        userModel
+            .addFriend(userId, friend)
+            .then(function (response) {
+                res.sendStatus(200);
+            }, function () {
+                res.sendStatus(500);
+            });
+    }
+
+    function removeFriend(req, res) {
+        var userId = req.params['userId'];
+        var friend = req.body;
+        userModel
+            .removeFriend(userId, friend)
+            .then(function (response) {
+                res.sendStatus(200);
+            }, function () {
+                res.sendStatus(500);
             });
     }
 
@@ -313,13 +348,11 @@ module.exports = function (app, userModel) {
 
     function findUserByUsername(req, res) {
         userModel
-            .findUserByUsername(req.params.username)
+            .findUserByUsername(req.query.username)
             .then(function (user) {
-                if(err) {
-                    res.sendStatus(500);
-                } else {
-                    res.json(user);
-                }
+                res.json(user);
+            }, function() {
+                res.sendStatus(500);
             });
     }
 
@@ -345,11 +378,6 @@ module.exports = function (app, userModel) {
                 function () {
                     res.sendStatus(500);
                 });
-
-
-        /*newUser._id = (new Date()).getTime() + "";
-         users.push(newUser);
-         return res.json(newUser);*/
     }
 
     function serializeUser(user, done) {

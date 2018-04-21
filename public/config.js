@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module("Infographer", ['ngRoute'])
+        .module("UniChat", ['ngRoute'])
         .config(configuration);
 
     function configuration($routeProvider, $httpProvider) {
@@ -11,7 +11,7 @@
 
         $routeProvider
             .when("/", {
-                templateUrl: 'views/infograph/templates/welcome.html'
+                templateUrl: 'views/chat/templates/welcome.html'
             })
             .when("/login", {
                 templateUrl: 'views/user/templates/login.view.client.html'
@@ -59,32 +59,51 @@
                 }
             })
             .when("/test", {
-                templateUrl: 'views/components/templates/editors/test-editor.html'
+                templateUrl: 'views/chat/templates/chat-edit.view.client.html'
             })
-            .when("/viewer/:inid", {
-                templateUrl: 'views/infograph/templates/infograph-viewer.view.client.html',
-                controller: "InfographViewController",
+            .when("/chat", {
+                templateUrl: 'views/chat/templates/chat-general.client.html'
+            })
+            .when("/friends", {
+                templateUrl: 'views/user/templates/friends.view.client.html',
+                controller: 'FriendController',
+                controllerAs: 'model',
+                resolve: {
+                    currentUser: checkLogin
+                }
+            })
+            .when("/chat/:cid", {
+                templateUrl: 'views/chat/templates/chat-viewer.view.client.html',
+                controller: "ChatViewController",
                 controllerAs: "model"
             })
-            .when("/creator", {
-                templateUrl: 'views/infograph/templates/infograph-edit.view.client.html',
-                controller: "InfographNewController",
+            .when("/chat/new", {
+                templateUrl: 'views/chat/templates/chat-edit.view.client.html',
+                controller: "ChatNewController",
                 controllerAs: "model",
                 resolve: {
                     currentUser: checkLogin
                 }
             })
-            .when("/editor/:inid", {
-                templateUrl: 'views/infograph/templates/infograph-edit.view.client.html',
-                controller: "InfographEditController",
+            .when("/chat/:uid/friend/:fid/new", {
+                templateUrl: 'views/chat/templates/chat-edit.view.client.html',
+                controller: "ChatNewController",
                 controllerAs: "model",
                 resolve: {
                     currentUser: checkLogin
                 }
             })
-            .when("/editor/:inid/addtxt", {
-                templateUrl: 'views/components/templates/editors/text-new.view.client.html',
-                controller: "ComponentNewController",
+            .when("/chat/:cid", {
+                templateUrl: 'views/chat/templates/chat-edit.view.client.html',
+                controller: "ChatEditController",
+                controllerAs: "model",
+                resolve: {
+                    currentUser: checkLogin
+                }
+            })
+            .when("/editor/:cid/addtxt", {
+                templateUrl: 'views/message/templates/editors/text-new.view.client.html',
+                controller: "MessageNewController",
                 controllerAs: 'model',
                 resolve: {
                     currentUser: checkLogin

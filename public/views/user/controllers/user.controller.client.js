@@ -1,9 +1,9 @@
 /**
- * Created by Akshay on 2/15/2017.
+ * Created by Akshay on 4/17/2018.
  */
 (function() {
     angular
-        .module("Infographer")
+        .module("UniChat")
         .controller("LoginController", LoginController)
         .controller("ProfileController", ProfileController)
         .controller("RegisterController", RegisterController);
@@ -13,10 +13,10 @@
         vm.login = login;
 
         function login(user) {
-            if (user == null          ||
-                user.username == ""   ||
-                user.password == null ||
-                user.password == ""){
+            if (user === null          ||
+                user.username === ""   ||
+                user.password === null ||
+                user.password === ""){
                 vm.error = "Please enter your credentials!";
                 return;
             }
@@ -25,11 +25,11 @@
                 .then(function (user) {
                     if(user) {
                         if(user === "bad pwd")
-                            vm.error = 'Please enter correct username and password'
+                            vm.error = 'Please enter correct username and password';
                         else
                             $location.url('/profile')
                     } else {
-                        vm.error = 'Please enter correct username and password'
+                        vm.error = 'Please enter correct username and password';
                     }
                 });
         }
@@ -115,11 +115,6 @@
                 return;
             }
 
-            /*UserService.findUserByUsername(user.username)
-             .success(function (user) {
-             vm.error = "Username " + user.username + " already in use.";
-             })
-             .error(function(err) {*/
             var newUser = {
                 username: user.username,
                 password: user.password,

@@ -1,0 +1,159 @@
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $('#message-constructor').on('keydown', function(e) {
+        //Send msg
+        if (e.which === 13 && e.shiftKey === true) {
+            alert("Sent");
+            return false;
+        }
+    });
+
+</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right hidden-xs hidden-sm">
+                <a href="#/creator"
+                   class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-left">
+                <a href="#/dashboard" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="wrapper" data-spy="scroll" data-target="#spy">
+        <div class="row">
+            <div class="col-md-2 hidden-xs">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper" class="">
+                    <nav id="spy">
+                        <ul class="sidebar-nav nav">
+                            <li>
+                                <img class="logo" src="../../../assets/Logo.png" />
+                            </li>
+                            <li> <a href="#/dashboard" data-target="#">
+                                <span class="fa fa-home solo">Dashboard</span></a>
+                            </li>
+
+                            <a>
+                                <input ng-model="searchText" type="text" class="form-control as-search" style="width: 90%; margin-left: 5%" placeholder="Search friends">
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h1 class="header">{{model.chat.name}}</h1>
+                <div class="container-fluid" style="margin-top: 0">
+                    <div class="row" style="height: 480px; overflow: auto">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-8">
+
+                            <div class="col-xs-12">
+                                <div class="chat-container">
+                                    <div class="col-xs-2 right-bordered">
+                                        <div class="row">
+                                            <span class="glyphicon glyphicon-user user-avatar text-center"></span>
+                                        </div>
+                                        <div class="row">
+                                            Alice
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-10">
+                                        <div class="right" style="text-align: right">
+                                            <p>Hello. How are you doing today? Long time no see.</p>
+                                            <span class="time-right">11:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="chat-container darker right">
+                                    <div class="col-xs-10">
+                                        <div class="left">
+                                            <p class="msg-left">Hey! I'm fine. Thanks for asking!</p>
+                                            <span class="time-left">11:01</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 left-bordered">
+                                        <div class="row">
+                                            <span class="glyphicon glyphicon-user user-avatar text-center"></span>
+                                        </div>
+                                        <div class="row">
+                                            You
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="chat-container darker right">
+                                    <div class="col-xs-10">
+                                        <div class="left">
+                                            <p class="msg-left">How are you? It has been long indeed.</p>
+                                            <span class="time-left">11:01</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 left-bordered">
+                                        <div class="row">
+                                            <span class="glyphicon glyphicon-user user-avatar text-center"></span>
+                                        </div>
+                                        <div class="row">
+                                            You
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="messages" ng-repeat="message in model.chat">
+                                {{message.timestamp}}
+                                {{message.text}}
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-7">
+                            <textarea id="message-constructor" class="form-control" data-toggle="tooltip" data-placement="top" title="Press shift + enter to send!" rows="3" id="msg" ng-model="msg"></textarea>
+                        </div>
+                        <div class="col-xs-1">
+                            <a class="btn btn-success btn-block" ng-click="model.createChatMessage(msg)" id="send-msg">Send</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="row container-fluid">
+            <div class="col-xs-12">
+                <div class="navbar-text pull-right">
+                    <a href="#/profile" class="navbar-link">
+                      <span class="glyphicon glyphicon-user">
+                      </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>

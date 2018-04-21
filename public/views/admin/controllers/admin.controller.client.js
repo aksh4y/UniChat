@@ -3,7 +3,7 @@
  */
 (function () {
     angular
-        .module('Infographer')
+        .module('UniChat')
         .controller('AdminController', AdminController);
 
     function AdminController(UserService) {

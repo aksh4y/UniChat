@@ -48,6 +48,25 @@
            type="email"
            class="form-control"
            placeholder="Email"/>
+
+    <label for="reg-language">Language</label>
+    <select id="reg-language" required class="form-control" ng-model="user.language">
+           <option ng-selected="true">English</option>
+           <option>Chinese</option>
+           <option>Traditional Chinese</option>
+           <option>Korean</option>
+           <option>Arabic</option>
+           <option>French</option>
+           <option>Portuguese</option>
+           <option>Spanish</option>
+           <option>Dutch</option>
+           <option>Italian</option>
+           <option>German</option>
+           <option>Japanese</option>
+           <option>Turkish</option>
+           <option>Polish</option>
+           <option>Russian</option>
+    </select>
     <label for="reg-phone">Phone Number</label>
     <input ng-model="user.phone"
            id="reg-phone"

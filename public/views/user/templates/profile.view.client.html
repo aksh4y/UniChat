@@ -55,6 +55,26 @@
                 <input ng-model="model.user.email" type="email" class="form-control" id="email" placeholder="Email">
             </div>
             <div class="form-group">
+                <label for="language">Language</label>
+                <select id="reg-language" required class="form-control" ng-model="model.user.language">
+                    <option>English</option>
+                    <option>Chinese</option>
+                    <option>Traditional Chinese</option>
+                    <option>Korean</option>
+                    <option>Arabic</option>
+                    <option>French</option>
+                    <option>Portuguese</option>
+                    <option>Spanish</option>
+                    <option>Dutch</option>
+                    <option>Italian</option>
+                    <option>German</option>
+                    <option>Japanese</option>
+                    <option>Turkish</option>
+                    <option>Polish</option>
+                    <option>Russian</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="phone">Phone Number With Area Code</label>
                 <input ng-model="model.user.phone" type="text" class="form-control" id="phone" placeholder="+12345678900">
             </div>

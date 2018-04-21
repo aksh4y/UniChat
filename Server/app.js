@@ -1,5 +1,5 @@
 /**
- * Created by Akshay on 2/17/2017.
+ * Created by Akshay on 4/17/2018.
  */
 module.exports = function (app) {
 
@@ -8,7 +8,6 @@ module.exports = function (app) {
 
     <!-- Services -->
     require('./services/user.service.server.js')(app, models.userModel);
-    require('./services/infographic.service.server.js')(app, models.infographicModel);
-    require('./services/component.service.server')(app, models.componentModel);
-   // require('./services/flickr.service.Server.js')(app);
+    require('./services/chat.service.server.js')(app, models.chatModel);
+    require('./services/message.service.server')(app, models.messageModel);
 };

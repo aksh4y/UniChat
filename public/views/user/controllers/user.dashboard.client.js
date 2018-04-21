@@ -1,60 +1,92 @@
 /**
- * Created by Akshay on 4/14/2017.
+ * Created by Akshay on 4/17/2018.
  */
 
 (function() {
     angular
-        .module("Infographer")
-        .controller("DashboardController", DashboardController);
+        .module("UniChat")
+        .controller("DashboardController", DashboardController)
+        .controller("FriendController", FriendController);
 
-
-    function DashboardController(currentUser, InfographicService, $location) {
+    function DashboardController(currentUser, ChatService, UserService, $location) {
         var vm = this;
         vm.user = currentUser;
 
         function init(){
-            InfographicService
-                .findAllInfographicsForUser(vm.user._id)
+            ChatService
+                .findAllChatsForUser(vm.user._id)
                 .then(function (response) {
-                    vm.infographics = response;
+                    vm.chats = response;
                 });
-        }
-        init();
-        /*
-        vm.logout = function() {
-            UserService
-                .logout()
-                .then(function (reponse) {
-                    $location.url('/login');
-                });
-        };
 
-
-        vm.update = function (newUser) {
-            console.log("controller update");
-            UserService
-                .updateUser(newUser)
-                .success(function () {
-                    vm.message = "User successfully updated"
-                })
-                .error(function() {
-                    vm.error = "Unable to update user";
-                })
-
-        };
-
-        vm.delete = function (userId) {
-            var answer = confirm("Are you sure?");
-            if(answer) {
-                UserService
-                    .deleteUser(userId)
-                    .success(function() {
-                        $location.url("/login");
-                    })
-                    .error(function() {
-                        vm.error = "Some error occurred.";
+            var friends2 = [];
+            var friends = vm.user.friends;
+            for(var i = 0; i < friends.length; i++) {
+                UserService.findUserById(friends[i])
+                    .then(function (response) {
+                        friends2.push(response.data);
                     });
             }
-        };*/
+            vm.friends = friends2;
+        }
+        init();
+        vm.searchUsers = function(name) {
+            UserService
+                .findUserByUsername(name)
+                .then(function(response) {
+                    vm.results = response.data;
+                });
+        };
+
+        vm.removeFriend = function (friend) {
+            UserService
+                .removeFriend(vm.user._id, friend)
+                .then(function (response) {
+                    location.reload();
+                }, function () {
+                    vm.error = "Could not remove!"
+                })
+        }
+    }
+
+    function FriendController(currentUser, UserService, $location) {
+        var vm = this;
+        vm.user = currentUser;
+
+        function init(){
+
+        }
+        init();
+
+
+        vm.searchUsers = function(username) {
+            if(username !== null && username !== "")
+                UserService
+                    .findUsersByUsername(username)
+                    .then(function (response) {
+                        var res = response.data;
+                        var index = null;
+                        for(var i = 0; i < res.length; i++) {
+                            if(res[i]._id === vm.user._id)
+                                index = i;
+                        }
+                        if(index !== null)
+                            res.splice(index, 1);
+                        vm.users = res;
+
+                    });
+            else
+                vm.users = {};
+        };
+
+
+        vm.addFriend = function (friend) {
+            UserService.addFriend(vm.user._id, friend)
+                .then(function (response) {
+                    $location.url("/dashboard");
+                }, function (err) {
+                    vm.error = "Oops! An error has occurred."
+                });
+        };
     }
 })();

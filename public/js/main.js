@@ -71,7 +71,7 @@ $("body").on('click', function (evt) {
     }
 });
 
-// Make all components draggable
+// Make all message draggable
 $("#canvas").on("mouseover", ".draggable", function() {
     if(!$(this).is(":ui-draggable"))
         $(this).draggable({

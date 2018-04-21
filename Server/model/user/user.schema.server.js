@@ -11,6 +11,8 @@ module.exports = function () {
         lastName: String,
         email: String,
         phone: String,
+        language: {type: String, enum:['English', 'Chinese', 'Traditional Chinese', 'Korean', 'Arabic', 'French', 'Portuguese', 'Spanish', 'Dutch',
+            'Italian', 'German', 'Japanese', 'Turkish', 'Polish', 'Russian'], required: true, default: 'English'},
         google: {
             id: String,
             token: String
@@ -19,10 +21,11 @@ module.exports = function () {
             id: String,
             token: String
         },
-        infographics: [{type: mongoose.Schema.Types.ObjectId, ref:'InfographicModel'}],
+        chats: [{type: mongoose.Schema.Types.ObjectId, ref:'ChatModel'}],
+        friends: [{type: mongoose.Schema.Types.ObjectId, ref:'UserModel'}],
         role: {type:String, enum:['USER','ADMIN'], required: true, default: 'USER'},
         dateCreated: {type:Date, default: Date.now()}
-    }, {collection: 'infographer.users'});
+    }, {collection: 'unichat.users'});
 
     return UserSchema;
 };

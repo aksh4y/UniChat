@@ -1,5 +1,5 @@
 /**
- * Created by Akshay on 3/3/2017.
+ * Created by Akshay on 4/17/2018.
  */
 module.exports = function () {
 
@@ -17,17 +17,21 @@ module.exports = function () {
         "createUser": createUser,
         "findUserById": findUserById,
         "findUserByUsername": findUserByUsername,
+        "findUsersByUsername": findUsersByUsername,
         "findUserByCredentials": findUserByCredentials,
         "updateUser": updateUser,
         "deleteUser": deleteUser,
         "findUserByGoogleId": findUserByGoogleId,
         "findUserByFacebookId": findUserByFacebookId,
-        "findAllUsers": findAllUsers
+        "findAllUsers": findAllUsers,
+        "addFriend": addFriend,
+        "removeFriend": removeFriend,
+        "findAllFriendsForUser": findAllFriendsForUser
     };
 
     return api;
 
-    
+
     function findUserByGoogleId(googleId) {
         return userModel.findOne({'google.id': googleId});
     }
@@ -40,7 +44,6 @@ module.exports = function () {
         return userModel.find();
     }
 
-
     function createUser(user) {
         var deferred = q.defer();
         user.password = bcrypt.hashSync(user.password);
@@ -52,6 +55,74 @@ module.exports = function () {
             }
         });
         return deferred.promise;
+    }
+
+    function addFriend(userId, friend) {
+        var d = q.defer();
+        userModel.findById(userId)
+            .then(function (user) {
+                var index = user.friends.indexOf(friend._id);
+                if(index > -1)
+                    return;
+                userModel
+                    .findOneAndUpdate({"_id": userId}, {$push: {friends: friend}}, function (err, updatedUser) {
+                        if (err) {
+                            d.reject();
+                        } else {
+                            userModel
+                                .findOneAndUpdate({"_id": friend._id}, {$push: {friends: user}}, function (err, updatedUser) {
+                                    if (err) {
+                                        d.reject(err);
+                                    } else {
+                                        d.resolve(updatedUser);
+                                    }
+                                });
+                        }
+                    });
+
+            }, function (err) {
+                d.reject(err);
+            });
+        return d.promise;
+    }
+
+    function removeFriend(userId, friend) {
+        var d = q.defer();
+        userModel.findById(userId)
+            .then(function (user) {
+                userModel
+                    .findOneAndUpdate({"_id": userId}, {$pull: {friends: friend._id}}, function (err, updatedUser) {
+                        if (err) {
+                            d.reject();
+                        } else {
+                            userModel
+                                .findOneAndUpdate({"_id": friend._id}, {$pull: {friends: userId}}, function (err, updatedUser) {
+                                    if (err) {
+                                        d.reject(err);
+                                    } else {
+                                        d.resolve(updatedUser);
+                                    }
+                                });
+                        }
+                    });
+
+            }, function (err) {
+                d.reject(err);
+            });
+        return d.promise;
+    }
+
+    function findAllFriendsForUser(userId) {
+        var d = q.defer();
+        userModel
+            .find({"_user": userId}, function (err, chats) {
+                if (err) {
+                    d.reject(err);
+                } else {
+                    d.resolve(chats);
+                }
+            });
+        return d.promise;
     }
 
     function updateUser(userId, user) {
@@ -73,8 +144,8 @@ module.exports = function () {
         var d = q.defer();
         findUserById(userId)
             .then(function(user) {
-                if(user.infographics.length != 0) {
-                    deleteUserInfographics(userId)
+                if(user.chats.length != 0) {
+                    deleteUserChats(userId)
                         .then(function() {
                             userModel
                                 .remove({_id: userId})
@@ -104,15 +175,15 @@ module.exports = function () {
         return d.promise;
     }
 
-    function deleteUserInfographics(userId) {
+    function deleteUserChats(userId) {
         var deferred = q.defer();
 
-        model.infographicModel
-            .findAllInfographicsForUser(userId)
-            .then(function (infographics) {
-                for(var i in infographics) {
-                    model.infographicModel
-                        .deleteInfographic(infographics[i]._id)
+        model.chatModel
+            .findAllChatsForUser(userId)
+            .then(function (chats) {
+                for(var chat in chats) {
+                    model.chatModel
+                        .deleteChat(chats[chat]._id)
                         .then(function() {
                             deferred.resolve();
                         }, function(err) {
@@ -140,9 +211,12 @@ module.exports = function () {
         return d.promise;
     }
 
-
     function findUserByUsername(username) {
         return userModel.findOne({username: username});
+    }
+
+    function findUsersByUsername(username) {
+        return userModel.find({username: new RegExp(username, 'i')});
     }
 
     function findUserByCredentials(credentials) {
