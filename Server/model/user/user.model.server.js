@@ -26,7 +26,8 @@ module.exports = function () {
         "findAllUsers": findAllUsers,
         "addFriend": addFriend,
         "removeFriend": removeFriend,
-        "findAllFriendsForUser": findAllFriendsForUser
+        "findAllFriendsForUser": findAllFriendsForUser,
+        "deleteChatForUser": deleteChatForUser
     };
 
     return api;
@@ -56,6 +57,8 @@ module.exports = function () {
         });
         return deferred.promise;
     }
+
+
 
     function addFriend(userId, friend) {
         var d = q.defer();
@@ -192,6 +195,19 @@ module.exports = function () {
                 }
             }, function (err) {
                 deferred.reject(err);
+            });
+        return deferred.promise;
+    }
+
+    function deleteChatForUser(userId, chatId) {
+        var deferred = q.defer();
+        userModel
+            .findOneAndUpdate({"_id": userId}, {$pull: {chats: chatId}}, function (err, updatedUser) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    deferred.resolve(updatedUser);
+                }
             });
         return deferred.promise;
     }

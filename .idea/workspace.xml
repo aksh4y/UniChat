@@ -2,453 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dfce8ff-10f0-49bb-9008-5a1ff1c44f43" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/caseless/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/caseless/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/caseless/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/caseless/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/csv-stringify/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/csv-stringify/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/csv-stringify/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/csv-stringify/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/extend/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/extend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/extend/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/extend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/file-type/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/file-type/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/file-type/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/file-type/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/form-data/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/form-data/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/form-data/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/form-data/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/is-stream/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/is-stream/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/is-stream/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/is-stream/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/node/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/node/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/node/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/node/inspector.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/node/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/request/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/request/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/request/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/request/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/tough-cookie/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/tough-cookie/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/tough-cookie/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/@types/tough-cookie/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/buffer-from/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/buffer-from/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/buffer-from/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/buffer-from/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/combined-stream/lib/defer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/lib/sync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/samples/api.callback.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/samples/api.pipe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/samples/api.stream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/csv-stringify/samples/options.header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/fast-deep-equal/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/file-type/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/file-type/license" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/file-type/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/file-type/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-extendable/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-extendable/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-extendable/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-extendable/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-extendable/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-plain-object/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-plain-object/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-plain-object/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-plain-object/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/is-plain-object/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/isobject/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/isobject/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/isobject/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/isobject/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/isobject/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/LICENSE-MIT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/grunt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/lib/node-jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/src/wrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/test/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/test/css.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/test/fixtures/core.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/test/fixtures/css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/test/fixtures/css.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/test/helpers/helper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/jQuery/tmp/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/asyncworker.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/buffers.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/callback.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/converters.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/errors.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/json.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/maybe_types.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/methods.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/new.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/node_misc.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/object_wrappers.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/persistent.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/scopes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/script.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/string_bytes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/v8_internals.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/doc/v8_misc.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/include_dirs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_callbacks.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_callbacks_12_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_callbacks_pre_12_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_converters.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_converters_43_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_converters_pre_43_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_define_own_property_helper.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_implementation_12_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_implementation_pre_12_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_json.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_maybe_43_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_maybe_pre_43_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_new.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_object_wrap.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_persistent_12_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_persistent_pre_12_inl.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_private.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_string_bytes.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_typedarray_contents.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/nan_weak.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/tools/1to2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/tools/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/nan/tools/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.omit/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.omit/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.omit/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.omit/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.pick/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.pick/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.pick/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/object.pick/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/dnssec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-db/HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-db/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-db/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-db/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-db/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-db/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-types/HISTORY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-types/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-types/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-types/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/mime-types/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/cookies.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/getProxyFromURI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/har.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/multipart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/oauth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/querystring.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/redirect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/lib/tunnel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/twilio/node_modules/request/request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/.airtap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typedarray-to-buffer/test/basic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/uuid/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/uuid/README_js.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/uuid/lib/md5-browser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/uuid/lib/md5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/uuid/lib/v35.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/uuid/v3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/vcap_services/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/vcap_services/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/vcap_services/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/vcap_services/deploy.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/vcap_services/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/vcap_services/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/.swagger-codegen-ignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/assistant/v1.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/assistant/v1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/assistant/v1.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/authorization/v1.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/authorization/v1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/authorization/v1.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/conversation/v1-generated.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/conversation/v1-generated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/conversation/v1-generated.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/conversation/v1.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/conversation/v1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/conversation/v1.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/dialog/v1.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/dialog/v1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/dialog/v1.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/discovery/v1-generated.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/discovery/v1-generated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/discovery/v1-generated.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/discovery/v1.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/discovery/v1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/discovery/v1.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/dist/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/dist/watson.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/dist/watson.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/index.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/language-translator/v2-generated.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/language-translator/v2-generated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/language-translator/v2-generated.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/language-translator/v2.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/language-translator/v2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/language-translator/v2.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/base_service.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/base_service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/base_service.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/content-type.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/content-type.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/content-type.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/helper.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/helper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/helper.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/json-training-to-csv.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/json-training-to-csv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/json-training-to-csv.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/querystring.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/querystring.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/querystring.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/recognize-stream.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/recognize-stream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/recognize-stream.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/requestwrapper.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/requestwrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/watson-developer-cloud/lib/requestwrapper.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/views/chat/templates/chat-add-friend.view.client.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/model/chat/chat.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/chat/chat.model.server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/model/message/message.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/message/message.model.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/model/message/message.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/message/message.schema.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/model/user/user.schema.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/user/user.schema.server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/model/user/user.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/user/user.model.server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/services/chat.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/services/chat.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/services/message.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/services/message.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/aws4/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/aws4/.tern-port" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/aws4/aws4.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/aws4/aws4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/aws4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/aws4/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/boom/node_modules/hoek/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/boom/node_modules/hoek/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/boom/node_modules/hoek/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/boom/node_modules/hoek/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/combined-stream/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/combined-stream/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/combined-stream/lib/combined_stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/combined-stream/lib/combined_stream.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/combined-stream/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/combined-stream/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cryptiles/node_modules/hoek/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cryptiles/node_modules/hoek/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cryptiles/node_modules/hoek/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cryptiles/node_modules/hoek/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/.eslintrc.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/benchmark/.eslintrc.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/benchmark/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-deep-equal/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-deep-equal/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/spec/.eslintrc.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/spec/index.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fast-deep-equal/spec/tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/form-data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/form-data/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/form-data/README.md.bak" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/form-data/README.md.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/form-data/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/form-data/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/hawk/node_modules/hoek/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/hawk/node_modules/hoek/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/hawk/node_modules/hoek/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/hawk/node_modules/hoek/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/AUTHORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jquery/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jquery/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/jsonp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/load.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/parseXML.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/var/location.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/var/nonce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/var/rquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/xhr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/attr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/classes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/prop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/support.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/val.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/callbacks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/DOMEval.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/access.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/nodeName.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/parseHTML.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/ready-no-deferred.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/ready.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/readyException.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/stripAndCollapse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/support.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/var/rsingleTag.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/addGetHookIf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/adjustCSS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/curCSS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/hiddenVisibleSelectors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/showHide.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/support.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/cssExpand.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/getStyles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/isHiddenWithinTree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/rmargin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/rnumnonpx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/swap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/Data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/var/acceptData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/var/dataPriv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/var/dataUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/deferred.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/deferred/exceptionHook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/deprecated.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/dimensions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/effects.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/effects/Tween.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/effects/animatedSelector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/alias.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/focusin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/support.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/trigger.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/exports/amd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/exports/global.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/_evalUrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/buildFragment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/getAll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/setGlobalEval.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/support.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/var/rcheckableType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/var/rscriptType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/var/rtagName.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/wrapMap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/offset.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/queue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/queue/delay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/selector-native.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/selector-sizzle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/selector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/serialize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/findFilter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/var/dir.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/var/rneedsContext.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/var/siblings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/ObjectFunctionString.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/arr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/class2type.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/concat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/document.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/documentElement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/fnToString.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/getProto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/hasOwn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/indexOf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/pnum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/push.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/rcssNum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/rnothtmlwhite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/slice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/support.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/toString.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/wrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/lib/oauth.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/lib/oauth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-db/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-types/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-types/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-types/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-types/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/node_modules/mime-types/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/node_modules/mime-types/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sntp/node_modules/hoek/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sntp/node_modules/hoek/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sntp/node_modules/hoek/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sntp/node_modules/hoek/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/bin/sshpk-conv" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/bin/sshpk-conv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/algs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/algs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/dhe.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/dhe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/ed-compat.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/ed-compat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/auto.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/auto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pem.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs8.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/rfc4253.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/rfc4253.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/ssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/ssh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/x509.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/x509.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/identity.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/identity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/key.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/key.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/private-key.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/private-key.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tough-cookie/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tough-cookie/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tough-cookie/lib/cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tough-cookie/lib/cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tough-cookie/lib/pubsuffix.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tough-cookie/lib/pubsuffix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tough-cookie/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tough-cookie/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/HISTORY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/bin/uuid" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/bin/uuid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/lib/rng-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/lib/rng-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/lib/rng.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/lib/rng.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/lib/sha1-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/lib/sha1-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/lib/sha1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/lib/sha1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/v1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/v4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/v5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/v5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/services/message.service.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/services/message.service.client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/services/chat.service.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/services/chat.service.client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/message/controllers/message.controller.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/message/controllers/message.controller.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -462,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="chat-edit.view.client.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chat-edit.view.client.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="75" column="108" selection-start-line="75" selection-start-column="108" selection-end-line="75" selection-end-column="108" />
+            <state relative-caret-position="151">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -479,38 +45,87 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dashboard.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="69" column="85" lean-forward="true" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="61" column="82" lean-forward="true" selection-start-line="61" selection-start-column="82" selection-end-line="61" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message.model.server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/model/message/message.model.server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="105" column="34" lean-forward="true" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="chat.controller.client.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="124" column="62" lean-forward="true" selection-start-line="124" selection-start-column="62" selection-end-line="124" selection-end-column="62" />
+            <state relative-caret-position="454">
+              <caret line="456" column="62" lean-forward="true" selection-start-line="456" selection-start-column="62" selection-end-line="456" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message.service.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/services/message.service.server.js">
+      <file leaf-file-name="user.service.client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/services/user.service.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+            <state relative-caret-position="-153">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message.model.server.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Server/model/message/message.model.server.js">
+      <file leaf-file-name="chat-add-friend.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/chat/templates/chat-add-friend.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="340">
+              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.controller.client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="50" column="29" lean-forward="true" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+            <state relative-caret-position="-481">
+              <caret line="105" column="36" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.dashboard.client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chat.service.client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/services/chat.service.client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -527,36 +142,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>push</find>
-      <find>searchte</find>
-      <find>vm.error</find>
-      <find>chat</find>
-      <find>splice</find>
-      <find>friend in</find>
-      <find>chat.name</find>
-      <find>send</find>
-      <find>findallme</find>
-      <find>crea</find>
-      <find>create</find>
-      <find>participan</find>
-      <find>friend</find>
-      <find>getarr</find>
-      <find>language</find>
-      <find>google</find>
-      <find>faceb</find>
-      <find>process</find>
-      <find>register</find>
-      <find>date</find>
-      <find>require</find>
-      <find>conso</find>
-      <find>console</find>
-      <find>trans</find>
-      <find>sear</find>
-      <find>createme</find>
-      <find>var deferred = q.defer();</find>
       <find>update</find>
       <find>transl</find>
       <find>sort</find>
+      <find>name</find>
+      <find>createchat</find>
+      <find>chat</find>
+      <find>findoneand</find>
+      <find>plus</find>
+      <find>deleteinfo</find>
+      <find>send</find>
+      <find>deletech</find>
+      <find>deletechat</find>
+      <find>splice</find>
+      <find>remove</find>
+      <find>removepar</find>
+      <find>add fri</find>
+      <find>defer</find>
+      <find>friends</find>
+      <find>participa</find>
+      <find>FriendCon</find>
+      <find>friendscon</find>
+      <find>search ch</find>
+      <find>friendsco</find>
+      <find>add</find>
+      <find>profile</find>
+      <find>friendcon</find>
+      <find>transla</find>
+      <find>dashb</find>
+      <find>ng-repe</find>
+      <find>hidden-xs</find>
     </findStrings>
     <replaceStrings>
       <replace>message</replace>
@@ -600,14 +215,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Server/services/user.service.server.js" />
         <option value="$PROJECT_DIR$/public/services/user.service.client.js" />
-        <option value="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" />
-        <option value="$PROJECT_DIR$/Server/model/user/user.model.server.js" />
-        <option value="$PROJECT_DIR$/public/config.js" />
-        <option value="$PROJECT_DIR$/public/services/chat.service.client.js" />
-        <option value="$PROJECT_DIR$/Server/model/chat/chat.model.server.js" />
-        <option value="$PROJECT_DIR$/Server/services/chat.service.server.js" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html" />
         <option value="$PROJECT_DIR$/public/views/message/controllers/message.controller.client.js" />
         <option value="$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js" />
         <option value="$PROJECT_DIR$/Server/model/user/user.schema.server.js" />
@@ -616,9 +224,17 @@
         <option value="$PROJECT_DIR$/public/services/message.service.client.js" />
         <option value="$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js" />
         <option value="$PROJECT_DIR$/Server/services/message.service.server.js" />
+        <option value="$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html" />
+        <option value="$PROJECT_DIR$/Server/model/user/user.model.server.js" />
+        <option value="$PROJECT_DIR$/Server/model/chat/chat.model.server.js" />
+        <option value="$PROJECT_DIR$/Server/services/chat.service.server.js" />
+        <option value="$PROJECT_DIR$/public/services/chat.service.client.js" />
+        <option value="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" />
+        <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js" />
-        <option value="$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html" />
+        <option value="$PROJECT_DIR$/public/views/chat/templates/chat-add-friend.view.client.html" />
         <option value="$PROJECT_DIR$/Server/model/message/message.model.server.js" />
+        <option value="$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html" />
       </list>
     </option>
   </component>
@@ -637,9 +253,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -649,7 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -797,6 +412,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -814,12 +430,12 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Akshay\Desktop\UniChat\public\css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Akshay\Desktop\UniChat\Server\model\chat" />
       <recent name="C:\Users\Akshay\Desktop\UniChat\public\views\chat\controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Akshay\Desktop\UniChat\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -864,11 +480,12 @@
       <workItem from="1523919933851" duration="32418000" />
       <workItem from="1524229627019" duration="56489000" />
       <workItem from="1524347128430" duration="9577000" />
+      <workItem from="1524368613926" duration="15264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113839000" />
+    <option name="totallyTimeSpent" value="129103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -900,13 +517,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Server/model/message/message.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js" />
     <entry file="file://$PROJECT_DIR$/public/login.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1020,20 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="68" column="50" lean-forward="true" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/chat/templates/chat-general.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1055,59 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/services/user.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/user/templates/friends.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/services/chat.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/model/chat/chat.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/services/chat.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/model/chat/chat.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1118,24 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="82" column="43" lean-forward="true" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/services/user.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="62" column="49" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1160,16 +693,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/model/user/user.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2419">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/services/message.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
+        <state relative-caret-position="1207">
           <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
         </state>
       </provider>
@@ -1183,22 +709,124 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="50" column="29" lean-forward="true" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        <state relative-caret-position="850">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/model/user/user.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/model/chat/chat.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/model/chat/chat.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/services/chat.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/services/chat.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="61" column="82" lean-forward="true" selection-start-line="61" selection-start-column="82" selection-end-line="61" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/chat/templates/chat-general.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="69" column="85" lean-forward="true" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-481">
+          <caret line="105" column="36" selection-start-line="105" selection-start-column="36" selection-end-line="105" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/user/templates/friends.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="30" column="62" lean-forward="true" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/services/user.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/chat/templates/chat-add-friend.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/model/message/message.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="105" column="34" lean-forward="true" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="124" column="62" lean-forward="true" selection-start-line="124" selection-start-column="62" selection-end-line="124" selection-end-column="62" />
+        <state relative-caret-position="454">
+          <caret line="456" column="62" lean-forward="true" selection-start-line="456" selection-start-column="62" selection-end-line="456" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="75" column="108" selection-start-line="75" selection-start-column="108" selection-end-line="75" selection-end-column="108" />
+        <state relative-caret-position="151">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#li#2;n#ul#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1207,13 +835,6 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/model/message/message.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
         </state>
       </provider>
     </entry>

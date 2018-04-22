@@ -19,31 +19,36 @@ module.exports = function () {
         "updateChat": updateChat,
         "deleteChat": deleteChat,
         "deleteChatMessages": deleteChatMessages,
-        "removeMessage": removeMessage
+        "removeMessage": removeMessage,
+        "removeParticipant": removeParticipant
     };
 
     return api;
 
     function createChat(userId, friendId) {
         var deferred = q.defer();
-        model.userModel.findUserById(friendId)
-            .then(function (friend) {
-                var chat = {
-                    _user: userId,
-                    name: "Chat between " + friend.firstName + " and you",
-                    private: true,
-                    participants: [userId, friendId]
-                };
-                chatModel.create(chat, function (err, i) {
-                    if (err) {
-                        deferred.reject(err);
-                    } else {
-                        for(var p = 0; p < chat.participants.length; p++)
-                            addChat(chat.participants[p], i);
-                        deferred.resolve(i);
-                    }
-                });
+        model.userModel.findUserById(userId)
+            .then(function (user) {
+                model.userModel.findUserById(friendId)
+                    .then(function (friend) {
+                        var chat = {
+                            _user: userId,
+                            name: "Chat between " + user.firstName + " and " + friend.firstName,
+                            private: true,
+                            participants: [userId, friendId]
+                        };
+                        chatModel.create(chat, function (err, i) {
+                            if (err) {
+                                deferred.reject(err);
+                            } else {
+                                for(var p = 0; p < chat.participants.length; p++)
+                                    addChat(chat.participants[p], i);
+                                deferred.resolve(i);
+                            }
+                        });
+                    });
             });
+
         return deferred.promise;
     }
 
@@ -70,6 +75,26 @@ module.exports = function () {
                 } else {
                     d.resolve(chats);
                 }
+            });
+        return d.promise;
+    }
+
+    function removeParticipant(chatId, userId) {
+        var d = q.defer();
+        chatModel.findById(chatId)
+            .then(function (chat) {
+                chat.participants.splice(chat.participants.indexOf(userId), 1);
+                chat.save();
+                d.resolve(chat._id);
+            })
+            .then(function (chatId) {
+                model.userModel.findUserById(userId)
+                    .then(function (user) {
+                        user.chats.splice(user.chats.indexOf(chatId), 1);
+                        user.save();
+                        d.resolve(user);
+                    });
+                return d.promise;
             });
         return d.promise;
     }
@@ -101,62 +126,56 @@ module.exports = function () {
     }
 
 
-    function deleteChat(chatId){
+    function deleteChat(chatId) {
         var d = q.defer();
-        chatModel
-            .findById(chatId).populate('_user')
+        chatModel.findById(chatId)
             .then(function (chat) {
-                chat._user.chats.splice(chat._user.chats.indexOf(chatId),1);
-                chat._user.save();
-                if(chat.messages.length !=0) {
-                    deleteChatMessages(chatId)
-                        .then(function () {
-                            chatModel
-                                .remove({_id: chatId})
-                                .then(function () {
-                                    d.resolve();
-                                }, function (err) {
-                                    d.reject(err);
-                                });
-                        }, function (err) {
-                            d.reject(err);
+                var promises = [];
+                var participants = chat.participants;
+                participants.forEach(function(uid) {
+                    var promise = model.userModel.findUserById(uid)
+                        .then(function (user) {
+                            user.chats.splice(user.chats.indexOf(chatId), 1);
+                            user.save();
                         });
-                }
-                else {
-                    chatModel
-                        .remove({_id: chatId})
-                        .then(function () {
-                            d.resolve();
-                        }, function (err) {
-                            d.reject(err);
-                        });
-                }
-
+                    promises.push(promise);
+                });
+                d.resolve(promises);
             }, function (err) {
                 d.reject(err);
+            })
+            .then(function(res) {
+                deleteChatMessages(chatId)
+                    .then(function (res) {
+                        chatModel.remove({_id: chatId})
+                            .then(function(res) {
+                                d.resolve(res);
+                            })
+                    });
+                return d.promise;
             });
         return d.promise;
     }
 
+
     function setModel(_model) {
         model = _model;
     }
-
 
     function deleteChatMessages(chatId) {
         var deferred = q.defer();
         model.messageModel
             .findAllMessagesForChat(chatId)
             .then(function (messages) {
-                for(var c in messages) {
+                messages.forEach(function (message) {
                     model.messageModel
-                        .deleteMessage(messages[c]._id)
-                        .then(function() {
+                        .deleteMessage(message._id)
+                        .then(function(res) {
                             deferred.resolve();
                         }, function(err) {
                             deferred.reject(err);
                         });
-                }
+                });
             }, function (err) {
                 deferred.reject(err);
             });

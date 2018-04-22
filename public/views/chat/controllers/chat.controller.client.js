@@ -7,7 +7,8 @@
         .module("UniChat")
         .controller("ChatNewController", ChatNewController)
         .controller("ChatEditController", ChatEditController)
-        .controller("ChatViewController", ChatViewController);
+        .controller("ChatViewController", ChatViewController)
+        .controller("FriendsController", FriendsController);
 
     function ChatViewController(MessageService, UserService, $routeParams, ChatService, $location) {
         var vm = this;
@@ -74,6 +75,7 @@
         vm.chatId = $routeParams.cid;
         vm.removeParticipant = removeParticipant;
         vm.createMessage = createMessage;
+        vm.deleteChat = deleteChat;
         /*vm.updateInfograph = updateInfograph;
         vm.deleteInfograph = deleteInfograph;
         vm.createTextMessage = createTextMessage;
@@ -156,17 +158,14 @@
         }
 
         function removeParticipant(user) {
-            console.log("remove part");
-            var messages = {
-                msg: "bla"
-            };
-            MessageService.translateMessage(messages)
-                .then(function (response) {
-                    console.log(response);
-                }, function (err) {
-                    console.log(err);
+            console.log(user);
+            ChatService.deleteChatParticipant(vm.chatId, user._id)
+                .success(function () {
+                    location.reload();
                 })
-
+                .error(function (err) {
+                    vm.error = "Oops! An error has occurred.";
+                })
         }
 
         function createMessage(text) {
@@ -200,9 +199,10 @@
             return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
         }
 
-        function deleteInfograph() {
+        function deleteChat() {
+            console.log("Delete");
             ChatService
-                .deleteChat(vm.infographId)
+                .deleteChat(vm.chatId)
                 .success(function () {
                     $location.url('/dashboard');
                 })
@@ -422,6 +422,76 @@
                 }, function (err) {
                     vm.error = "Creation error";
                 });
+        }
+    }
+
+    function FriendsController(currentUser, $routeParams, UserService, ChatService, $location, $q) {
+        var d = $q.defer();
+        var vm = this;
+        vm.user = currentUser;
+        vm.chatId = $routeParams.cid;
+        function init() {
+            ChatService.findChatById(vm.chatId)
+                .success(function (chat) {
+                    vm.chat = chat[0];
+                    var participants = chat[0].participants;
+                    var members = [];
+                    for(var p = 0; p < participants.length; p++) {
+                        UserService.findUserById(participants[p])
+                            .success(function (response) {
+                                members.push(response);
+                            });
+                    }
+                    vm.friends = members;
+                })
+                .error(function (err) {
+                    vm.error = "Oops. An error has occurred";
+                })
+        }
+        init();
+
+        vm.addParticipant = function(user) {
+            ChatService.findChatById(vm.chatId)
+                .success(function (chat) {
+                    chat[0].participants.push(user._id);
+                    ChatService.updateChat(vm.chatId, chat[0])
+                        .success(function (chat) {
+                            UserService.findUserById(user._id)
+                                .success(function (u) {
+                                    console.log(u);
+                                    u.chats.push(vm.chatId);
+                                    UserService.updateUser(u)
+                                        .success(function (res) {
+                                            vm.success = u.firstName + " has been added to chat!";
+                                        })
+                                        .error(function (err) {
+                                            vm.error = "Oops! An error has occurred."
+                                        })
+                                });
+                        });
+                })
+        };
+
+        vm.searchUsers = function(username) {
+            if(username !== null && username !== "")
+                UserService
+                    .findUsersByUsername(username)
+                    .then(function (response) {
+                        vm.users = getArrayWithoutUser(response.data);
+                    });
+            else
+                vm.users = {};
+        };
+
+        function getArrayWithoutUser(arr) {
+            var index = null;
+            for(var i = 0; i < arr.length; i++) {
+                if(arr[i]._id === vm.user._id)
+                    index = i;
+            }
+            if(index !== null)
+                arr.splice(index, 1);
+            return arr;
         }
     }
 

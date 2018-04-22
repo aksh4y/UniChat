@@ -5,6 +5,7 @@
   "main": "server.js",
   "private": "true",
   "dependencies": {
+    "Q": "^1.0.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.1",
     "bootstrap-colorpicker": "^2.5.1",
@@ -18,7 +19,7 @@
     "passport-facebook": "^1.0.3",
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
-    "q": "^1.4.1",
+    "q": "^1.5.1",
     "request": "^2.85.0",
     "twilio": "^3.11.0",
     "watson-developer-cloud": "^3.3.0"

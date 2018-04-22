@@ -13,13 +13,13 @@
                 </a>
             </div>
             <div class="navbar-text pull-left">
-                <a href="#/profile" class="navbar-link">
+                <a href="#/chat/{{model.chatId}}" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
             <div class="navbar-header">
                 <a class="navbar-brand">
-                    Profile
+                    Back to Chat
                 </a>
             </div>
         </div>
@@ -38,15 +38,11 @@
                     <div id="sidebar-wrapper" style="background:rgba(0, 0, 0, 0.4)">
                         <nav id="spy">
                             <ul id="friend-list" class="sidebar-nav nav list-group" style="margin-top: 10px; width: 90%; margin-left: 5%">
-                                <a href="#/friends" class="btn btn-block btn-success" style="margin-bottom: 5px;">Add Friends</a>
-                                <input ng-model="searchFriend" type="text" class="form-control as-search" placeholder="Search Friends">
+                                <input ng-model="searchFriend" type="text" class="form-control as-search" placeholder="Search Participants">
                                 <li ng-repeat="friend in model.friends | filter:searchFriend:strict" class="list-group-item">
                                     <div class="row">
-                                        <div class="col-xs-10">
-                                            <a style="color: wheat; padding-left: 0" href="#/chat/{{model.user._id}}/friend/{{friend._id}}/new">{{friend.firstName}} {{friend.lastName}}</a>
-                                        </div>
-                                        <div class="col-xs-2">
-                                            <span ng-click="model.removeFriend(friend)" class="glyphicon glyphicon-remove pull-right"></span>
+                                        <div class="col-xs-12">
+                                            <p style="color: wheat; padding-left: 0">{{friend.firstName}} {{friend.lastName}}</p>
                                         </div>
                                     </div>
                                 </li>
@@ -59,21 +55,26 @@
     </div>
 
 
-    <div class="col-xs-8 text-center" style="margin-top:10px">
 
-        <input ng-model="searchText" type="text" class="form-control as-search" placeholder="Search chats">
-        <div style="margin-top:50px;">
-            <div ng-repeat="chat in model.chats | filter:searchText:strict" style="float:left; padding-right:10px">
-                <div class="infograph-container">
-                    <img class="infograph-image" src="../../../assets/chat1.png" width="200px" height="300px"/>
-                    <div class="dashboard-view">
-                        <a href="#/chat/{{chat._id}}" class="infograph-text">View</a>
+    <div class="col-xs-8 text-center" style="margin-top:10px">
+        <div class="container-fluid as-bottom-pad">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8 text-center" style="margin-top:10px">
+                <input id="friend-search-bar" ng-change="model.searchUsers(searchText)" ng-model="searchText" ng-change="change()" type="text" class="form-control as-search" placeholder="Search Users">
+                <div style="margin-top:50px;">
+                    <div ng-repeat="u in model.users" style="float:left; padding-right:10px">
+                        <div class="friend-container">
+                            <div class="dashboard-edit">
+                                <a ng-click="model.addParticipant(u)" class="infograph-text">Add</a>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="info-title">{{u.username}}</div>
+                        <div class="info-subtitle">{{u.firstName}} {{u.lastName}}</div>
                     </div>
-                    <br/>
                 </div>
-                <div class="info-title">{{chat.name}}</div>
-                <div class="info-title" style="font-size: 10px">{{chat.dateCreated}}</div>
             </div>
+            <div class="col-xs-2"></div>
         </div>
     </div>
     <div class="col-xs-2"></div>

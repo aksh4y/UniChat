@@ -82,8 +82,34 @@ module.exports = function () {
         };
         languageTranslator.translate(parameters, function (error, response) {
             if (error) {
-                console.log(error);
-                d.reject();
+                model = messagePackage.source + "-en";
+                parameters = {
+                    text: messagePackage.msg,
+                    model_id: model
+                };
+                languageTranslator.translate(parameters, function (error, response) {
+                    if (error) {
+                        console.log(error);
+                        d.reject(error);
+                    }
+                    else {
+                        model = "en-" + messagePackage.destination;
+                        parameters = {
+                            text: response.translations[0].translation,
+                            model_id: model
+                        };
+                        languageTranslator.translate(parameters, function (error, response) {
+                            if (error) {
+                                console.log(error);
+                                d.reject(error);
+                            }
+                            else {
+                                messagePackage.response = response;
+                                d.resolve(messagePackage);
+                            }
+                        });
+                    }
+                });
             }
             else {
                 messagePackage.response = response;

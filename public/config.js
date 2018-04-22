@@ -101,6 +101,14 @@
                     currentUser: checkLogin
                 }
             })
+            .when("/chat/:cid/addFriend", {
+                templateUrl: 'views/chat/templates/chat-add-friend.view.client.html',
+                controller: "FriendsController",
+                controllerAs: "model",
+                resolve: {
+                    currentUser: checkLogin
+                }
+            })
             .when("/editor/:cid/addtxt", {
                 templateUrl: 'views/message/templates/editors/text-new.view.client.html',
                 controller: "MessageNewController",

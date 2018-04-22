@@ -16,9 +16,9 @@
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right hidden-xs hidden-sm">
-                <a href="#/creator"
+                <a ng-if="model.chat._user === model.user._id" ng-click="model.deleteChat()"
                    class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
                 </a>
             </div>
             <div class="navbar-text pull-left">
@@ -38,7 +38,7 @@
 <div class="container-fluid">
     <div id="wrapper" data-spy="scroll" data-target="#spy">
         <div class="row">
-            <div class="col-md-2 hidden-xs">
+            <div class="col-md-2 hidden-md">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper" class="">
                     <nav id="spy">
@@ -46,19 +46,19 @@
                             <li>
                                 <img class="logo" src="../../../assets/Logo.png" />
                             </li>
-                            <li> <a href="#/dashboard" data-target="#">
-                                <span class="fa fa-home solo">Dashboard</span></a>
+                            <li> <a href="#/chat/{{model.chatId}}/addFriend" data-target="#">
+                                <span class="fa fa-user-plus solo">Add Participants</span></a>
                             </li>
                             <a>
                                 <input ng-model="searchText" type="text" class="form-control as-search"  placeholder="Search Participants">
                             </a>
-                            <li ng-if="friend._id !== model.user._id" ng-repeat="friend in model.participants | filter:searchText:strict" class="list-group-item">
+                            <li ng-repeat="friend in model.participants | filter:searchText:strict" class="list-group-item">
                                 <div class="row">
                                     <div class="col-xs-10">
                                         <a style="color: wheat; padding-left: 0">{{friend.firstName}} {{friend.lastName}}</a>
                                     </div>
                                     <div class="col-xs-2">
-                                        <span ng-click="model.removeParticipant(friend)" class="glyphicon glyphicon-remove pull-right"></span>
+                                        <span ng-if="model.chat._user === model.user._id && friend._id !== model.user._id" ng-click="model.removeParticipant(friend)" class="glyphicon glyphicon-remove pull-right"></span>
                                     </div>
                                 </div>
                             </li>

@@ -9,6 +9,7 @@ module.exports = function (app, chatModel) {
     app.get("/api/chats/:userId", findAllChatsForUser);
     app.get("/api/chat/:cid", findChatById);
     app.post("/api/chat", createChat);
+    app.delete("/api/chat/:cid/user/:uid", deleteChatParticipant);
 
 
     function findChatById(req, res) {
@@ -31,6 +32,17 @@ module.exports = function (app, chatModel) {
             }, function(err) {
                 res.sendStatus(404).send(err);
             });
+    }
+
+    function deleteChatParticipant(req, res) {
+        var chatId = req.params.cid;
+        var userId = req.params.uid;
+        chatModel.removeParticipant(chatId, userId)
+            .then(function (response) {
+                res.json(response);
+            }, function (err) {
+                res.sendStatus(404).send(err);
+            })
     }
 
     function createChat(req, res) {

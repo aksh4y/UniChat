@@ -13,7 +13,8 @@
             "findChatById": findChatById,
             "deleteChat": deleteChat,
             "updateChat": updateChat,
-            "findAllChatsForUser": findAllChatsForUser
+            "findAllChatsForUser": findAllChatsForUser,
+            "deleteChatParticipant": deleteChatParticipant
         };
         return api;
 
@@ -40,6 +41,10 @@
                 .then(function (response) {
                     return response.data;
                 });
+        }
+
+        function deleteChatParticipant(chatId, userId) {
+            return $http.delete("/api/chat/" + chatId + "/user/" + userId);
         }
     }
 })();
