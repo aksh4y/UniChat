@@ -1,0 +1,59 @@
+<script>
+    function closeWarning() {
+        $('#warning').remove();
+    }
+</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-left">
+                <a href="#/profile" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid as-bottom-pad">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8 text-center" style="margin-top:10px">
+        <input ng-model="searchText" type="text" class="form-control as-search" placeholder="Search chats">
+        <div style="margin-top:50px;">
+            <div ng-repeat="chat in model.chats | filter:searchText:strict" style="float:left; padding-right:10px">
+                <div class="infograph-container">
+                    <img class="infograph-image" src="../../../assets/chat1.png" width="200px" height="300px"/>
+                    <div class="dashboard-view">
+                        <a href="#/chat/viewer/{{chat._id}}/public" class="infograph-text">View</a>
+                    </div>
+                    <br/>
+                </div>
+                <div class="info-title">{{chat.name}}</div>
+                <div class="info-title" style="font-size: 10px">{{chat.dateCreated}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2"></div>
+</div>
+
+<div ng-show="model.error" class="alert alert-warning"></div>
+<div ng-show="model.success" class="alert alert-success"></div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#/profile" class="navbar-link">
+                      <span class="glyphicon glyphicon-user">
+                      </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

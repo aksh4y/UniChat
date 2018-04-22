@@ -1,0 +1,95 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right hidden-xs hidden-sm">
+                <a href="#/" class="navbar-link">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+            </div>
+            <div class="navbar-text pull-left">
+                <a href="#/chat/public" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    Public Chats
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="header">{{model.chat.name}}</h1>
+            <h3 class="text-center">Created on: {{model.chatDate}}</h3>
+            <div class="container-fluid" style="margin-top: 0">
+                <div class="row" style="height: 480px; overflow: auto">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-8">
+                        <div id="messages" ng-repeat="message in model.messages | orderBy: 'dateCreated'">
+                            <div ng-if="$index % 2 === 0" class="col-xs-12">
+                                <div class="chat-container">
+                                    <div class="col-xs-2 right-bordered">
+                                        <div class="row">
+                                            <span class="glyphicon glyphicon-user user-avatar text-center"></span>
+                                        </div>
+                                        <div class="row" style="font-size: 12px">
+                                            {{message.name}}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-10">
+                                        <div class="right" style="text-align: right">
+                                            <p>{{message.msg}}</p>
+                                            <span class="time-right">{{message.dateCreated | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!------------------------------------------------------------->
+
+                            <div ng-if="$index % 2 !== 0" class="col-xs-12">
+                                <div class="chat-container darker right">
+                                    <div class="col-xs-10">
+                                        <div class="left">
+                                            <p class="msg-left">{{message.msg}}</p>
+                                            <span class="time-left">{{message.dateCreated | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2 left-bordered">
+                                        <div class="row">
+                                            <span class="glyphicon glyphicon-user user-avatar text-center"></span>
+                                        </div>
+                                        <div class="row" style="font-size: 12px">
+                                            {{message.name}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <h3>Join UniChat now to create your own multi-language personal or group chats both public and private!</h3>
+                    <br/>
+                    <a class="btn btn-success" href="#/register">Join UniChat!</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text text-center" style="margin: 0 auto; width: 100%">
+                <p>Made with <span class="glyphicon glyphicon-heart" style="color: #961e1e"> </span> in Boston</p>
+            </div>
+        </div>
+    </div>
+</nav>

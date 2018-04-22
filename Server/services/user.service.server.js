@@ -58,7 +58,7 @@ module.exports = function (app, userModel) {
                             .updateUser(newUser._id, newUser)
                             .then(function (res) {
                                 client.messages.create({
-                                    body: 'OTP for Infographer is: ' + pass,
+                                    body: 'OTP for UniChat is: ' + pass,
                                     to: newUser.phone,  // Text this number
                                     from: process.env.TWILIO_NUMBER // From a valid Twilio number
                                 }).then(function (message) {
@@ -257,7 +257,7 @@ module.exports = function (app, userModel) {
     }
 
     function findAllUsers(req, res) {
-        if(req.user && req.user.role=='ADMIN') {
+        if(req.user && req.user.role==='ADMIN') {
             userModel
                 .findAllUsers()
                 .then(function (users) {
@@ -357,7 +357,7 @@ module.exports = function (app, userModel) {
     }
 
     function deleteUser(req, res) {
-        if (req.user && req.user.role == 'ADMIN') {
+        if (req.user && req.user.role === 'ADMIN') {
             userModel
                 .deleteUser(req.params.userId)
                 .then(function (status) {
@@ -398,6 +398,7 @@ module.exports = function (app, userModel) {
     }
 
     function isAdmin(req, res) {
+        console.log(req.user);
         res.send(req.isAuthenticated() && req.user.role && req.user.role.indexOf('ADMIN') > -1 ? req.user : '0');
     }
 

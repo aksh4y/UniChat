@@ -10,19 +10,6 @@
             return false;
         }
     });
-    // Header functions
-    $('#header').on('keydown', function(e) {
-        //Save on enter
-        if (e.which == 13) {
-            $('#save-header').click();
-            $('#header').blur();
-            return false;
-        }
-    }).on('click', function () {
-        $('#save-header').removeClass('hidden');
-    }).on('focusout', function () {
-        setTimeout(function(){$('#save-header').addClass('hidden');},500);
-    })
 
 </script>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -57,16 +44,10 @@
                     <nav id="spy">
                         <ul class="sidebar-nav nav" style="width: 90%; margin-left: 5%">
                             <li>
-                                <img style="width: 50px" class="logo" src="../../../assets/Logo.png" />
+                                <img class="logo" src="../../../assets/Logo.png" />
                             </li>
-                            <li ng-if="model.chat._user === model.user._id"> <a href="#/chat/{{model.chatId}}/addFriend" data-target="#">
+                            <li> <a href="#/chat/{{model.chatId}}/addFriend" data-target="#">
                                 <span class="fa fa-user-plus solo">Add Participants</span></a>
-                            </li>
-                            <li> <a ng-click="model.toggleChatPrivacy()" data-target="#">
-                                <span ng-if="model.chat.private === true && model.chat._user === model.user._id" class="fa fa-toggle-on">Private</span></a>
-                            </li>
-                            <li> <a ng-click="model.toggleChatPrivacy()" data-target="#">
-                                <span ng-if="model.chat.private === false && model.chat._user === model.user._id" class="fa fa-toggle-off">Public</span></a>
                             </li>
                             <a>
                                 <input ng-model="searchText" type="text" class="form-control as-search"  placeholder="Search Participants">
@@ -86,8 +67,7 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <h1 id="header" class="header" contenteditable="true" data-toggle="tooltip" data-placement="top" title="Click to change chat title">{{model.chat.name}}</h1>
-                <a id="save-header" ng-click="model.updateHeader()" class="btn btn-info pull-right hidden">Save</a>
+                <h1 class="header">{{model.chat.name}}</h1>
                 <h3 class="text-center">Created on: {{model.chatDate}}</h3>
                 <div class="container-fluid" style="margin-top: 0">
                     <div class="row" style="height: 480px; overflow: auto">
@@ -134,32 +114,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--<div class="col-xs-12">
-                                    <div class="chat-container darker right">
-                                        <div class="col-xs-10">
-                                            <div class="left">
-                                                <p class="msg-left">How are you? It has been long indeed.</p>
-                                                <span class="time-left">11:01</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-2 left-bordered">
-                                            <div class="row">
-                                                <span class="glyphicon glyphicon-user user-avatar text-center"></span>
-                                            </div>
-                                            <div class="row">
-                                                You
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="messag2es" ng-repeat="message in model.messages">
-                                    {{message.dateCreated}}
-                                    {{message.msg}}
-                                    {{message.name}}
-
-
-                                </div>-->
                             </div>
                         </div>
                     </div>

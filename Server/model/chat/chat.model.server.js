@@ -20,7 +20,8 @@ module.exports = function () {
         "deleteChat": deleteChat,
         "deleteChatMessages": deleteChatMessages,
         "removeMessage": removeMessage,
-        "removeParticipant": removeParticipant
+        "removeParticipant": removeParticipant,
+        "findPublicChats": findPublicChats
     };
 
     return api;
@@ -75,6 +76,18 @@ module.exports = function () {
                 } else {
                     d.resolve(chats);
                 }
+            });
+        return d.promise;
+    }
+
+    function findPublicChats() {
+        var d = q.defer();
+        chatModel
+            .find({"private": false}, function (err, chats) {
+                if(err) {
+                    d.reject(err);
+                }
+                else d.resolve(chats);
             });
         return d.promise;
     }

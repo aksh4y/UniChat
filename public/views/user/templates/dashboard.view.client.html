@@ -38,7 +38,9 @@
                     <div id="sidebar-wrapper" style="background:rgba(0, 0, 0, 0.4)">
                         <nav id="spy">
                             <ul id="friend-list" class="sidebar-nav nav list-group" style="margin-top: 10px; width: 90%; margin-left: 5%">
-                                <a href="#/friends" class="btn btn-block btn-success" style="margin-bottom: 5px;">Add Friends</a>
+                                <a href="#/friends" class="btn btn-block btn-success" style="margin-bottom: 15px;">ADD FRIENDS</a>
+                                <p ng-if="model.friends.length !== 0" style="color: #3bfffb">QUICK CHAT</p>
+                                <br/>
                                 <input ng-model="searchFriend" type="text" class="form-control as-search" placeholder="Search Friends">
                                 <li ng-repeat="friend in model.friends | filter:searchFriend:strict" class="list-group-item">
                                     <div class="row">

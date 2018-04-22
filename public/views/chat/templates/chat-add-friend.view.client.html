@@ -39,7 +39,7 @@
                         <nav id="spy">
                             <ul id="friend-list" class="sidebar-nav nav list-group" style="margin-top: 10px; width: 90%; margin-left: 5%">
                                 <input ng-model="searchFriend" type="text" class="form-control as-search" placeholder="Search Participants">
-                                <li ng-repeat="friend in model.friends | filter:searchFriend:strict" class="list-group-item">
+                                <li ng-repeat="friend in model.participants | filter:searchFriend:strict" class="list-group-item">
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <p style="color: wheat; padding-left: 0">{{friend.firstName}} {{friend.lastName}}</p>
@@ -60,9 +60,9 @@
         <div class="container-fluid as-bottom-pad">
             <div class="col-xs-2"></div>
             <div class="col-xs-8 text-center" style="margin-top:10px">
-                <input id="friend-search-bar" ng-change="model.searchUsers(searchText)" ng-model="searchText" ng-change="change()" type="text" class="form-control as-search" placeholder="Search Users">
+                <input id="friend-search-bar" ng-model="searchText" type="text" class="form-control as-search" placeholder="Search Friends">
                 <div style="margin-top:50px;">
-                    <div ng-repeat="u in model.users" style="float:left; padding-right:10px">
+                    <div ng-if="u._id !== model.user._id" ng-repeat="u in model.friends | filter: searchText :strict" style="float:left; padding-right:10px">
                         <div class="friend-container">
                             <div class="dashboard-edit">
                                 <a ng-click="model.addParticipant(u)" class="infograph-text">Add</a>
@@ -71,6 +71,9 @@
                         <br/>
                         <div class="info-title">{{u.username}}</div>
                         <div class="info-subtitle">{{u.firstName}} {{u.lastName}}</div>
+                    </div>
+                    <div>
+                        <a ng-if="(model.friends | filter: searchText).length === 0" href="#/friends" class="text-center">No result? Try adding friends first.</a>
                     </div>
                 </div>
             </div>

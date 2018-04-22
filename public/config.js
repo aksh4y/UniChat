@@ -64,6 +64,16 @@
             .when("/chat", {
                 templateUrl: 'views/chat/templates/chat-general.client.html'
             })
+            .when("/chat/public",{
+                templateUrl: 'views/chat/templates/chat-public.view.client.html',
+                controller: "ChatViewController",
+                controllerAs: "model"
+            })
+            .when("/chat/viewer/:cid/public", {
+                templateUrl: 'views/chat/templates/chat-public-viewer.view.client.html',
+                controller: "ChatViewController",
+                controllerAs: "model"
+                })
             .when("/friends", {
                 templateUrl: 'views/user/templates/friends.view.client.html',
                 controller: 'FriendController',
@@ -72,11 +82,11 @@
                     currentUser: checkLogin
                 }
             })
-            .when("/chat/:cid", {
+            /*.when("/chat/:cid", {
                 templateUrl: 'views/chat/templates/chat-viewer.view.client.html',
                 controller: "ChatViewController",
                 controllerAs: "model"
-            })
+            })*/
             .when("/chat/new", {
                 templateUrl: 'views/chat/templates/chat-edit.view.client.html',
                 controller: "ChatNewController",
@@ -128,7 +138,7 @@
                 .isAdmin()
                 .then(function (user) {
                     console.log(user);
-                    if(user != '0' && user.role.indexOf('ADMIN') > -1) {
+                    if(user !== '0' && user.role.indexOf('ADMIN') > -1) {
                         deferred.resolve(user);
                     } else {
                         $location.url('/profile');
@@ -143,7 +153,7 @@
             UserService
                 .loggedIn()
                 .then(function (user) {
-                    if(user != '0') {
+                    if(user !== '0') {
                         deferred.resolve(user);
                     } else {
                         $location.url('/login');

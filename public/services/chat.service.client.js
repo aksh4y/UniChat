@@ -14,7 +14,8 @@
             "deleteChat": deleteChat,
             "updateChat": updateChat,
             "findAllChatsForUser": findAllChatsForUser,
-            "deleteChatParticipant": deleteChatParticipant
+            "deleteChatParticipant": deleteChatParticipant,
+            "findPublicChats": findPublicChats
         };
         return api;
 
@@ -23,6 +24,9 @@
             return $http.get("/api/chat/" + chatId);
         }
 
+        function findPublicChats() {
+            return $http.get("/api/chat");
+        }
 
         function createChat(userId, friendId) {
             return $http.post("/api/chat?uid=" + userId + "&fid=" + friendId);

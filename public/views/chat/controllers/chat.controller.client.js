@@ -12,34 +12,52 @@
 
     function ChatViewController(MessageService, UserService, $routeParams, ChatService, $location) {
         var vm = this;
-        vm.infographId = $routeParams.cid;
-        vm.user = "no";
+        vm.chatId = null;
+        if($routeParams.cid)
+            vm.chatId = $routeParams.cid;
         vm.logout = logout;
         function init() {
+            ChatService.findPublicChats()
+                .success(function (chats) {
+                    vm.chats = chats;
+                }, function (err) {
+                    vm.error = err;
+                })
+        }
+        if(vm.chatId === null)
+            init();
+        else loadChat();
+
+
+        function loadChat() {
             ChatService
-                .findChatById(vm.infographId)
+                .findChatById(vm.chatId)
                 .success(function (response) {
                     vm.chat = response[0];
-                    UserService
-                        .loggedIn()
-                        .then(function (user) {
-                            if(user != '0') {
-                                vm.user = "yes";
-                            } else {
-                                vm.user = "no";
-                            }
-                        });
                     MessageService
-                        .findAllMessagesForChat(vm.infographId)
+                        .findAllMessagesForChat(vm.chatId)
                         .success(function (response) {
                             vm.messages = response;
                         });
+                    vm.chatDate = formatDate(vm.chat.dateCreated);
                 })
                 .error(function () {
-                    vm.error("An error has occurred!");
+                    vm.error = "An error has occurred!";
                 });
         }
-        init();
+
+
+        function formatDate(date) {
+            var date = new Date(date);
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+        }
 
         function logout() {
             UserService
@@ -76,6 +94,8 @@
         vm.removeParticipant = removeParticipant;
         vm.createMessage = createMessage;
         vm.deleteChat = deleteChat;
+        vm.toggleChatPrivacy = toggleChatPrivacy;
+        vm.updateHeader = updateHeader;
         /*vm.updateInfograph = updateInfograph;
         vm.deleteInfograph = deleteInfograph;
         vm.createTextMessage = createTextMessage;
@@ -144,6 +164,18 @@
         }
         init();
 
+        function toggleChatPrivacy() {
+            vm.chat.private = !vm.chat.private;
+            ChatService.updateChat(vm.chatId, vm.chat)
+                .then(function (chat) {
+                    //location.reload();
+                    vm.chat = chat;
+                    location.reload();
+                }, function (err) {
+                    vm.error = "An error has occurred.";
+                });
+        }
+
         function getArrayWithoutUser(arr) {
             var index = null;
             console.log(arr);
@@ -186,7 +218,6 @@
                 })
         }
 
-
         function formatDate(date) {
             var date = new Date(date);
             var hours = date.getHours();
@@ -220,29 +251,21 @@
                 });
         }
 
-        function updateInfograph () {
-            var infoTitle = $('#infoTitle').text();
-            if(infoTitle == null ||
-                infoTitle == "") {
+        function updateHeader () {
+            console.log("update header");
+            var name = $('#header').text();
+            if(name === null ||
+                name === "") {
                 vm.error = "Please do not leave chat name blank";
-                $('#infoTitle').text("Enter Chat Title");
+                $('#header').text("Enter Chat Title");
                 return;
             }
-            var background_Url = $('#page-content-wrapper').css('background-image');
-            background_Url = background_Url.replace('url(','').replace(')','').replace(/\"/gi, "");
-            var background_color = $('#page-content-wrapper').css('background-color');
-
-            var newInfograph = {
-                name: infoTitle,
-                background_color: background_color,
-                background_url: background_Url
-            };
+            vm.chat.name = name;
             ChatService
-                .updateChat(vm.infographId, newInfograph)
+                .updateChat(vm.chatId, vm.chat)
                 .success(function(i) {
-                    updateMessages();
-                    updateMessagesPositions();
                     vm.message = "Successfully saved!";
+
                 })
                 .error(function () {
                     vm.error = "An error has occurred.";
@@ -442,11 +465,20 @@
                                 members.push(response);
                             });
                     }
-                    vm.friends = members;
+                    vm.participants = members;
                 })
                 .error(function (err) {
                     vm.error = "Oops. An error has occurred";
-                })
+                });
+            var friends2 = [];
+            var friends = vm.user.friends;
+            for (var i = 0; i < friends.length; i++) {
+                UserService.findUserById(friends[i])
+                    .then(function (response) {
+                        friends2.push(response.data);
+                    });
+            }
+            vm.friends = friends2;
         }
         init();
 
@@ -463,6 +495,7 @@
                                     UserService.updateUser(u)
                                         .success(function (res) {
                                             vm.success = u.firstName + " has been added to chat!";
+                                            $location.url('#/chat/'+vm.chatId);
                                         })
                                         .error(function (err) {
                                             vm.error = "Oops! An error has occurred."
@@ -472,16 +505,19 @@
                 })
         };
 
-        vm.searchUsers = function(username) {
-            if(username !== null && username !== "")
+        /*vm.searchUsers = function(username) {
+            if(username !== null && username !== "") {
+
+
                 UserService
                     .findUsersByUsername(username)
                     .then(function (response) {
-                        vm.users = getArrayWithoutUser(response.data);
+                        vm.friends = getArrayWithoutUser(response.data);
                     });
+            }
             else
-                vm.users = {};
-        };
+                vm.friends = {};
+        };*/
 
         function getArrayWithoutUser(arr) {
             var index = null;

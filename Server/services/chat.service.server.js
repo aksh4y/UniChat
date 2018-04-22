@@ -10,6 +10,7 @@ module.exports = function (app, chatModel) {
     app.get("/api/chat/:cid", findChatById);
     app.post("/api/chat", createChat);
     app.delete("/api/chat/:cid/user/:uid", deleteChatParticipant);
+    app.get("/api/chat", findPublicChats);
 
 
     function findChatById(req, res) {
@@ -21,6 +22,16 @@ module.exports = function (app, chatModel) {
             }, function (err) {
                 res.sendStatus(404).send(err);
             });
+    }
+
+    function findPublicChats(req, res) {
+        chatModel
+            .findPublicChats()
+            .then(function (chats) {
+                res.json(chats);
+            }, function (err) {
+                res.sendStatus(404).send(err);
+            })
     }
 
     function findAllChatsForUser(req, res){
