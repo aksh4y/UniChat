@@ -3,11 +3,12 @@
  */
 
 module.exports = function (app, messageModel) {
-    app.post("/api/chat/:cid/message", createMessage);
+    app.post("/api/chat/:cid/user/:uid/message", createMessage);
     app.get("/api/chat/:cid/messages", findAllMessagesForChat);
     app.get("/api/message/:mid", findMessageById);
     app.put("/api/message/:mid", updateMessage);
     app.delete("/api/message/:mid", deleteMessage);
+    app.post("/api/message/translate", translateMessage);
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({ dest: __dirname+'/../../public/uploads' });
@@ -55,6 +56,8 @@ module.exports = function (app, messageModel) {
             });
     }
 
+
+
     function findAllMessagesForChat(req, res){
         var chatId = req.params['cid'];
         messageModel
@@ -62,6 +65,16 @@ module.exports = function (app, messageModel) {
             .then(function (messages) {
                 res.json(messages);
             }, function(err) {
+                res.sendStatus(404).send(err);
+            });
+    }
+
+    function translateMessage(req, res) {
+        var message = req.body;
+        return messageModel.translateMessage(message)
+            .then(function (response) {
+                res.json(response);
+            },function (err) {
                 res.sendStatus(404).send(err);
             });
     }
@@ -98,8 +111,9 @@ module.exports = function (app, messageModel) {
     function createMessage(req, res) {
         var newMessage= req.body;
         var chatId = req.params.cid;
+        var userId = req.params.uid;
         messageModel
-            .createMessage(chatId, newMessage)
+            .createMessage(chatId, userId, newMessage)
             .then(function (message) {
                 res.json(message);
             }, function (err) {

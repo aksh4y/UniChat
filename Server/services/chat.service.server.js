@@ -36,7 +36,6 @@ module.exports = function (app, chatModel) {
     function createChat(req, res) {
         var userId = req.query.uid;
         var friendId = req.query.fid;
-        console.log("server side fn");
         chatModel
             .createChat(userId, friendId)
             .then(function (chat) {

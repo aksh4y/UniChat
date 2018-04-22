@@ -12,16 +12,38 @@
         var vm = this;
         vm.user = currentUser;
 
+        function getArrayWithoutUser(arr) {
+            var index = null;
+            for(var i = 0; i < arr.length; i++) {
+                if(arr[i]._id === vm.user._id)
+                    index = i;
+            }
+            if(index !== null)
+                arr.splice(index, 1);
+            return arr;
+        }
+
         function init(){
-            ChatService
-                .findAllChatsForUser(vm.user._id)
-                .then(function (response) {
-                    vm.chats = response;
-                });
+            var userChats = [];
+            for(var i=0; i < vm.user.chats.length; i++) {
+                ChatService.findChatById(vm.user.chats[i])
+                    .then(function (response) {
+                        members = [];
+                        for(i=0; i < response.data[0].participants.length; i++) {
+                            UserService.findUserById(response.data[0].participants[i])
+                                .then(function (response) {
+                                    members.push(response.data);
+                                });
+                        }
+                        response.data[0].participants = getArrayWithoutUser(members);
+                        userChats.push(response.data[0]);
+                    });
+            }
+            vm.chats = userChats;
 
             var friends2 = [];
             var friends = vm.user.friends;
-            for(var i = 0; i < friends.length; i++) {
+            for(i = 0; i < friends.length; i++) {
                 UserService.findUserById(friends[i])
                     .then(function (response) {
                         friends2.push(response.data);
@@ -58,22 +80,23 @@
         }
         init();
 
+        function getArrayWithoutUser(arr) {
+            var index = null;
+            for(var i = 0; i < arr.length; i++) {
+                if(arr[i]._id === vm.user._id)
+                    index = i;
+            }
+            if(index !== null)
+                arr.splice(index, 1);
+            return arr;
+        }
 
         vm.searchUsers = function(username) {
             if(username !== null && username !== "")
                 UserService
                     .findUsersByUsername(username)
                     .then(function (response) {
-                        var res = response.data;
-                        var index = null;
-                        for(var i = 0; i < res.length; i++) {
-                            if(res[i]._id === vm.user._id)
-                                index = i;
-                        }
-                        if(index !== null)
-                            res.splice(index, 1);
-                        vm.users = res;
-
+                        vm.users = getArrayWithoutUser(response.data);
                     });
             else
                 vm.users = {};

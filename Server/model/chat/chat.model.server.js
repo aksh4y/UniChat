@@ -25,11 +25,9 @@ module.exports = function () {
     return api;
 
     function createChat(userId, friendId) {
-        console.log("model");
         var deferred = q.defer();
         model.userModel.findUserById(friendId)
             .then(function (friend) {
-                console.log(friend);
                 var chat = {
                     _user: userId,
                     name: "Chat between " + friend.firstName + " and you",
@@ -38,10 +36,10 @@ module.exports = function () {
                 };
                 chatModel.create(chat, function (err, i) {
                     if (err) {
-                        console.log("Error:"+err);
                         deferred.reject(err);
                     } else {
-                        addChat(userId, i);
+                        for(var p = 0; p < chat.participants.length; p++)
+                            addChat(chat.participants[p], i);
                         deferred.resolve(i);
                     }
                 });

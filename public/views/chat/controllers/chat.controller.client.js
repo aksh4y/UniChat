@@ -68,10 +68,12 @@
     }
 
     function ChatEditController
-    (currentUser, $routeParams, MessageService, UserService, ChatService, $location) {
+    (currentUser, $routeParams, MessageService, UserService, ChatService, $location, $q) {
         var vm = this;
         vm.user = currentUser;
         vm.chatId = $routeParams.cid;
+        vm.removeParticipant = removeParticipant;
+        vm.createMessage = createMessage;
         /*vm.updateInfograph = updateInfograph;
         vm.deleteInfograph = deleteInfograph;
         vm.createTextMessage = createTextMessage;
@@ -82,36 +84,121 @@
         vm.searchPhotos = searchPhotos;
         vm.selectPhoto = selectPhoto;*/
         function init() {
+            var d = $q.defer();
             ChatService.findChatById(vm.chatId)
-                .then(function (chat) {
-                    vm.chat = chat.data[0];
-                    
-                });
-
-            /*UserService.findUserById(vm.friendId)
-                .then(function (response) {
-                    vm.friend = response.data;
-
-                });*/
-
-           /* ChatService
-                .findChatById(vm.infographId)
-                .success(function (response) {
-                    vm.chat = response[0];
-                    $('#page-content-wrapper').css('background-image', 'url(' + vm.chat.background_url + ')');
-                    $('#page-content-wrapper').css('background-color', vm.chat.background_color);
-
+                .success(function (chat) {
+                    vm.chat = chat[0];
+                    vm.chatDate = formatDate(vm.chat.dateCreated);
+                    var participants = vm.chat.participants;
+                    var members = [];
+                    for(var p = 0; p < participants.length; p++) {
+                        UserService.findUserById(participants[p])
+                            .success(function (response) {
+                                members.push(response);
+                            });
+                    }
+                    vm.participants = members;
+                })
+                .then(function () {
                     MessageService
-                        .findAllMessagesForChat(vm.infographId)
+                        .findAllMessagesForChat(vm.chatId)
                         .success(function (response) {
                             vm.messages = response;
+                        })
+                        .then(function () {
+                            var msgs = [];
+
+                            for(i = 0; i < vm.messages.length; i++) {
+                                if (vm.messages[i]._user !== vm.user && vm.messages[i].language_model !== vm.user.language_model) {
+                                    var message = vm.messages[i];
+                                    message.source = vm.messages[i].language_model;
+                                    message.destination = vm.user.language_model;
+                                    MessageService.translateMessage(message)
+                                        .then(function (msg) {
+                                            var newMsg = msg.data;
+                                            newMsg.msg = msg.data.response.translations[0].translation;
+                                            msgs.push(newMsg);
+                                            d.resolve(msgs);
+                                        });
+                                }
+                                else {
+                                    msgs.push(vm.messages[i]);
+                                }
+                            }
+                            return d.promise;
+                        })
+                        .then(function (msgs) {
+                            /*msgs = [].slice.call(msgs).sort(function(a,b){
+                                return Date.parse(a.dateCreated) - Date.parse(b.dateCreated);
+                            });*/
+                            vm.messages = msgs;
+
+                            /*msgs.sort(function(a, b) {
+                                return Date.parse(a.dateCreated) - Date.parse(b.dateCreated);
+                            });*/
+                            //vm.messages = msgs;
                         });
-                })
-                .error(function () {
-                    vm.error ="An error has occurred!";
-                });*/
+                });
         }
         init();
+
+        function getArrayWithoutUser(arr) {
+            var index = null;
+            console.log(arr);
+            for(var i = 0; i < arr.length; i++) {
+                console.log(arr[i]._id);
+                if(arr[i]._id === vm.user._id)
+                    index = i;
+            }
+            if(index !== null)
+                arr.splice(index, 1);
+            return arr;
+        }
+
+        function removeParticipant(user) {
+            console.log("remove part");
+            var messages = {
+                msg: "bla"
+            };
+            MessageService.translateMessage(messages)
+                .then(function (response) {
+                    console.log(response);
+                }, function (err) {
+                    console.log(err);
+                })
+
+        }
+
+        function createMessage(text) {
+            var msg = {
+                _chat: vm.chatId,
+                _user: vm.user._id,
+                msg: text,
+                name: vm.user.firstName,
+                language_model: vm.user.language_model,
+                dateCreated: Date.now()
+            };
+            MessageService.createMessage(vm.chatId, vm.user._id, msg)
+                .success(function () {
+                    location.reload();
+                })
+                .error(function () {
+                    vm.error = "An error has occurred."
+                })
+        }
+
+
+        function formatDate(date) {
+            var date = new Date(date);
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+        }
 
         function deleteInfograph() {
             ChatService

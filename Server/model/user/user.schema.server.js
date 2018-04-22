@@ -13,6 +13,7 @@ module.exports = function () {
         phone: String,
         language: {type: String, enum:['English', 'Chinese', 'Traditional Chinese', 'Korean', 'Arabic', 'French', 'Portuguese', 'Spanish', 'Dutch',
             'Italian', 'German', 'Japanese', 'Turkish', 'Polish', 'Russian'], required: true, default: 'English'},
+        language_model: {type: String, required: true, default: 'en'},
         google: {
             id: String,
             token: String

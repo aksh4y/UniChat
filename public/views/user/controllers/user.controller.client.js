@@ -48,7 +48,41 @@
 
 
         vm.update = function (newUser) {
-            console.log("controller update");
+            var model = 'en';
+            switch(newUser.language) {
+                case 'English': model =  'en';
+                    break;
+                case 'Chinese': model = 'zh';
+                    break;
+                case 'Traditional Chinese': model = 'zht';
+                    break;
+                case 'Korean': model = 'ko';
+                    break;
+                case 'Arabic': model = 'ar';
+                    break;
+                case 'French': model = 'fr';
+                    break;
+                case 'Portuguese': model = 'pt';
+                    break;
+                case 'Spanish': model = 'es';
+                    break;
+                case 'Dutch': model = 'nl';
+                    break;
+                case 'Italian': model = 'it';
+                    break;
+                case 'German': model = 'de';
+                    break;
+                case 'Japanese': model = 'ja';
+                    break;
+                case 'Turkish': model = 'tr';
+                    break;
+                case 'Polish': model = 'pl';
+                    break;
+                case 'Russian': model = 'ru';
+                    break;
+            }
+
+            newUser.language_model = model;
             UserService
                 .updateUser(newUser)
                 .success(function () {
@@ -98,15 +132,17 @@
         };
 
         vm.register = function register(user) {
-            if (user == null          ||
-                user.username == null ||
-                user.password == null ||
-                user.username == ""   ||
-                user.password == ""   ||
-                user.email == null    ||
-                user.email == ""      ||
-                user.phone == null    ||
-                user.phone == ""){
+            if (user === null          ||
+                user.username === null ||
+                user.password === null ||
+                user.username === ""   ||
+                user.password === ""   ||
+                user.email === null    ||
+                user.email === ""      ||
+                user.phone === null    ||
+                user.phone === ""      ||
+                user.verifypassword === null ||
+                user.verifypassword === ""){
                 vm.error = "Please enter all your details!";
                 return;
             }
@@ -115,13 +151,50 @@
                 return;
             }
 
+            var model = 'en';
+            switch(user.language) {
+                case 'English': model =  'en';
+                break;
+                case 'Chinese': model = 'zh';
+                break;
+                case 'Traditional Chinese': model = 'zht';
+                    break;
+                case 'Korean': model = 'ko';
+                    break;
+                case 'Arabic': model = 'ar';
+                    break;
+                case 'French': model = 'fr';
+                    break;
+                case 'Portuguese': model = 'pt';
+                    break;
+                case 'Spanish': model = 'es';
+                    break;
+                case 'Dutch': model = 'nl';
+                    break;
+                case 'Italian': model = 'it';
+                    break;
+                case 'German': model = 'de';
+                    break;
+                case 'Japanese': model = 'ja';
+                    break;
+                case 'Turkish': model = 'tr';
+                    break;
+                case 'Polish': model = 'pl';
+                    break;
+                case 'Russian': model = 'ru';
+                    break;
+            }
+
+
             var newUser = {
                 username: user.username,
                 password: user.password,
                 firstName: user.firstName,
                 lastName: user.lastName,
                 email: user.email,
-                phone: user.phone
+                phone: user.phone,
+                language: user.language,
+                language_model: model
             };
             UserService.register(newUser)
                 .then(function(user) {

@@ -6,11 +6,25 @@ module.exports = function () {
     var model;
     var mongoose = require("mongoose");
     var q = require('q');
-
     var messageSchema = require('./message.schema.server')();
     var messageModel = mongoose.model('messageModel', messageSchema);
     var fs = require("fs");
     var publicDirectory =__dirname+"/../../../public";
+    var LanguageTranslatorV2 = require('watson-developer-cloud/language-translator/v2');
+    var languageTranslator = new LanguageTranslatorV2({
+        username: process.env.IBM_WATSON_USERNAME,
+        password: process.env.IBM_WATSON_PASSWORD,
+        headers: {
+            'X-Watson-Technology-Preview': '2017-07-01',
+            'X-Watson-Learning-Opt-Out': true
+        }
+    });
+    var NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js');
+    var natural_language_understanding = new NaturalLanguageUnderstandingV1({
+        'username': process.env.IBM_WATSON_USERNAME,
+        'password': process.env.IBM_WATSON_PASSWORD,
+        'version': '2018-03-16'
+    });
 
     var api = {
         "createMessage": createMessage,
@@ -18,17 +32,15 @@ module.exports = function () {
         "findMessageById": findMessageById,
         "updateMessage": updateMessage,
         "deleteMessage": deleteMessage,
+        "translateMessage": translateMessage,
         "setModel": setModel
     };
-
     return api;
 
-
-    function createMessage(chatId, newMessage) {
+    function createMessage(chatId, userId, message) {
         var d = q.defer();
-        newMessage._chat = chatId;
         messageModel
-            .create(newMessage, function (err, c) {
+            .create(message, function (err, c) {
                 if (err) {
                     d.reject(err);
                 } else {
@@ -49,8 +61,7 @@ module.exports = function () {
     function findAllMessagesForChat(chatId){
         return model.chatModel
             .findChatById(chatId)
-            .then(function (chat) {
-                //console.log(chat);
+            .then(function (chat){
                 var messagesOfChat = chat[0].messages;
                 var numberOfMessages = messagesOfChat.length;
                 var messageCollectionForChat = [];
@@ -59,6 +70,27 @@ module.exports = function () {
             }, function (error) {
                 return error;
             });
+    }
+
+    function translateMessage(messagePackage) {
+        var d = q.defer();
+
+        var model = messagePackage.source + "-" + messagePackage.destination;
+        var parameters = {
+            text: messagePackage.msg,
+            model_id: model
+        };
+        languageTranslator.translate(parameters, function (error, response) {
+            if (error) {
+                console.log(error);
+                d.reject();
+            }
+            else {
+                messagePackage.response = response;
+                d.resolve(messagePackage);
+            }
+        });
+        return d.promise;
     }
 
     function getMessagesRecursively(count, messagesOfChat, messageCollectionForChat) {
@@ -116,9 +148,9 @@ module.exports = function () {
                     }, function (err) {
                         d.reject(err);
                     });
-        }, function (err) {
-            d.reject(err);
-        });
+            }, function (err) {
+                d.reject(err);
+            });
         return d.promise;
     }
 

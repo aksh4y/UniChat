@@ -83,7 +83,7 @@
                 msg: msg
             };
             MessageService
-                .createMessage(vm.chatId, newMessage)
+                .createMessage(vm.chatId, vm.user._id, newMessage)
                 .success(function (message) {
                     $location.url("/chat/"+vm.chatId);
                 })

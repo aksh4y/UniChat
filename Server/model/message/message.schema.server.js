@@ -7,6 +7,8 @@ module.exports = function() {
     var MessageSchema = mongoose.Schema({
         _user: ({type: mongoose.Schema.Types.ObjectId, ref: 'UserModel'}),
         _chat: {type: mongoose.Schema.Types.ObjectId, ref: 'ChatModel'},
+        name: String,
+        language_model: {type: String, require: true, default: 'en'},
         read: {type:Boolean, default: false},
         msg: String,
         deleted: {type:Boolean, default: false},
