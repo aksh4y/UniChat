@@ -4,11 +4,14 @@ A MEAN stack web app which lets users chat with each other either or in a group 
 ## Active Link
 [UniChat](https://unichat-app.herokuapp.com).
 
+### Check out the [demo video](https://youtu.be/qsnsKJVhFlQ)
+
 ## Technologies
 * One-click login using Facebook and Google
 * Password recovery using Twilio SMS
 * Language translation using IBM Watson Language Translator
 * Sentiment analysis using IBM Watson Natural Language Understanding
+* Platform: MEAN - MongoDb, Express.js, AngularJS, node.js
 
 ## Screenshots
 ![img](Images/Welcome.PNG)
@@ -31,7 +34,6 @@ A MEAN stack web app which lets users chat with each other either or in a group 
 ![img](Images/Admin%20dashboard.png)
 ![img](Images/Chat%20Management.png)
 ![img](Images/User%20Management.png)
-### Check out the [demo video](https://youtu.be/qsnsKJVhFlQ)
 
 ## Citations
 Animated SVG Login: Darin Senneff
