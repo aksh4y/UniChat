@@ -15,6 +15,7 @@ module.exports = function () {
         "setModel": setModel,
         "createChat": createChat,
         "findAllChatsForUser": findAllChatsForUser,
+        "findAllChats": findAllChats,
         "findChatById": findChatById,
         "updateChat": updateChat,
         "deleteChat": deleteChat,
@@ -90,6 +91,10 @@ module.exports = function () {
                 else d.resolve(chats);
             });
         return d.promise;
+    }
+
+    function findAllChats() {
+        return chatModel.find();
     }
 
     function removeParticipant(chatId, userId) {

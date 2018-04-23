@@ -98,7 +98,7 @@
             var answer = confirm("Are you sure?");
             if(answer) {
                 UserService
-                    .deleteUser(userId)
+                    .unregisterUser(userId)
                     .success(function() {
                         $location.url("/login");
                     })

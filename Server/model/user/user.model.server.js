@@ -48,8 +48,8 @@ module.exports = function () {
     function createUser(user) {
         var deferred = q.defer();
         user.password = bcrypt.hashSync(user.password);
-        userModel.create(user, function(err, u) {
-            if(err) {
+        userModel.create(user, function (err, u) {
+            if (err) {
                 deferred.reject(err);
             } else {
                 deferred.resolve(u);
@@ -59,13 +59,12 @@ module.exports = function () {
     }
 
 
-
     function addFriend(userId, friend) {
         var d = q.defer();
         userModel.findById(userId)
             .then(function (user) {
                 var index = user.friends.indexOf(friend._id);
-                if(index > -1)
+                if (index > -1)
                     return;
                 userModel
                     .findOneAndUpdate({"_id": userId}, {$push: {friends: friend}}, function (err, updatedUser) {
@@ -91,26 +90,20 @@ module.exports = function () {
 
     function removeFriend(userId, friend) {
         var d = q.defer();
-        userModel.findById(userId)
-            .then(function (user) {
-                userModel
-                    .findOneAndUpdate({"_id": userId}, {$pull: {friends: friend._id}}, function (err, updatedUser) {
-                        if (err) {
-                            d.reject();
-                        } else {
-                            userModel
-                                .findOneAndUpdate({"_id": friend._id}, {$pull: {friends: userId}}, function (err, updatedUser) {
-                                    if (err) {
-                                        d.reject(err);
-                                    } else {
-                                        d.resolve(updatedUser);
-                                    }
-                                });
-                        }
-                    });
-
-            }, function (err) {
-                d.reject(err);
+        userModel
+            .findOneAndUpdate({"_id": userId}, {$pull: {friends: friend._id}}, function (err, updatedUser) {
+                if (err) {
+                    d.reject();
+                } else {
+                    userModel
+                        .findOneAndUpdate({"_id": friend._id}, {$pull: {friends: userId}}, function (err, updatedUser) {
+                            if (err) {
+                                d.reject(err);
+                            } else {
+                                d.resolve(updatedUser);
+                            }
+                        });
+                }
             });
         return d.promise;
     }
@@ -132,7 +125,7 @@ module.exports = function () {
         var d = q.defer();
         userModel
             .findOneAndUpdate({"_id": userId}, {$set: user}, function (err, updatedUser) {
-                if(err) {
+                if (err) {
                     d.reject();
                 } else {
                     d.resolve(updatedUser);
@@ -143,56 +136,71 @@ module.exports = function () {
     }
 
 
-    function deleteUser(userId){
+    function deleteUser(userId) {
         var d = q.defer();
         findUserById(userId)
-            .then(function(user) {
-                if(user.chats.length != 0) {
-                    deleteUserChats(userId)
-                        .then(function() {
-                            userModel
-                                .remove({_id: userId})
-                                .then(function() {
-                                    d.resolve();
-                                }, function (err) {
-                                    d.reject(err);
-                                });
-                        }, function(err) {
-                            d.reject(err);
-                        });
-                } else {
-                    userModel
-                        .remove({_id: userId})
-                        .then(function() {
-                            d.resolve();
+            .then(function (user) {
+                user.chats.forEach(function (chat) {
+                    model.chatModel
+                        .removeParticipant(chat, userId)
+                        .then(function () {
+                            //d.resolve();
                         }, function (err) {
                             d.reject(err);
                         });
-                }
+                });
+                d.resolve(user);
+                return d.promise;
+            })
+            .then(function (user) {
+                user.friends.forEach(function (friend) {
+                    var friendJson = {
+                        _id: friend
+                    };
+                    removeFriend(userId, friendJson)
+                        .then(function (res) {
 
-            }, function(err) {
+                        }, function (err) {
+                            d.reject(err);
+                        });
+                });
+                d.resolve();
+                return d.promise;
+            })
+            .then(function () {
+                userModel
+                    .remove({_id: userId})
+                    .then(function () {
+                        d.resolve();
+                    }, function (err) {
+                        d.reject(err);
+                    });
+            }, function (err) {
                 d.reject(err);
             });
-
-
         return d.promise;
     }
 
+
     function deleteUserChats(userId) {
         var deferred = q.defer();
-
         model.chatModel
             .findAllChatsForUser(userId)
             .then(function (chats) {
-                for(var chat in chats) {
+                chats.forEach(function (chat) {
                     model.chatModel
-                        .deleteChat(chats[chat]._id)
-                        .then(function() {
-                            deferred.resolve();
+                        .deleteChat(chat._id)
+                        .then(function(res) {
+                            model.chatModel
+                                .removeParticipant(chat._id, userId)
+                                .then(function () {
+
+                                });
                         }, function(err) {
                             deferred.reject(err);
                         });
-                }
+                });
+                deferred.resolve();
             }, function (err) {
                 deferred.reject(err);
             });

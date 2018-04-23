@@ -58,6 +58,22 @@
                     currentUser: checkAdmin
                 }
             })
+            .when("/admin/users", {
+                templateUrl: 'views/admin/templates/admin-users.view.html',
+                controller: "AdminController",
+                controllerAs: "model",
+                resolve: {
+                    currentUser: checkAdmin
+                }
+            })
+            .when("/admin/chats", {
+                templateUrl: 'views/admin/templates/admin-chats.view.html',
+                controller: "AdminController",
+                controllerAs: "model",
+                resolve: {
+                    currentUser: checkAdmin
+                }
+            })
             .when("/test", {
                 templateUrl: 'views/chat/templates/chat-edit.view.client.html'
             })
@@ -73,7 +89,7 @@
                 templateUrl: 'views/chat/templates/chat-public-viewer.view.client.html',
                 controller: "ChatViewController",
                 controllerAs: "model"
-                })
+            })
             .when("/friends", {
                 templateUrl: 'views/user/templates/friends.view.client.html',
                 controller: 'FriendController',
@@ -82,11 +98,6 @@
                     currentUser: checkLogin
                 }
             })
-            /*.when("/chat/:cid", {
-                templateUrl: 'views/chat/templates/chat-viewer.view.client.html',
-                controller: "ChatViewController",
-                controllerAs: "model"
-            })*/
             .when("/chat/new", {
                 templateUrl: 'views/chat/templates/chat-edit.view.client.html',
                 controller: "ChatNewController",
@@ -132,34 +143,34 @@
             });
     }
 
-        function checkAdmin($q, UserService, $location) {
-            var deferred = $q.defer();
-            UserService
-                .isAdmin()
-                .then(function (user) {
-                    console.log(user);
-                    if(user !== '0' && user.role.indexOf('ADMIN') > -1) {
-                        deferred.resolve(user);
-                    } else {
-                        $location.url('/profile');
-                        deferred.reject();
-                    }
-                });
-            return deferred.promise;
-        }
+    function checkAdmin($q, UserService, $location) {
+        var deferred = $q.defer();
+        UserService
+            .isAdmin()
+            .then(function (user) {
+                if(user !== '0' && user.role.indexOf('ADMIN') > -1) {
+                    deferred.resolve(user);
+                } else {
+                    $location.url('/profile');
+                    deferred.reject();
+                }
+            });
+        return deferred.promise;
+    }
 
-        function checkLogin($q, UserService, $location) {
-            var deferred = $q.defer();
-            UserService
-                .loggedIn()
-                .then(function (user) {
-                    if(user !== '0') {
-                        deferred.resolve(user);
-                    } else {
-                        $location.url('/login');
-                        deferred.reject();
-                    }
-                });
-            return deferred.promise;
-        }
+    function checkLogin($q, UserService, $location) {
+        var deferred = $q.defer();
+        UserService
+            .loggedIn()
+            .then(function (user) {
+                if(user !== '0') {
+                    deferred.resolve(user);
+                }
+                else {
+                    $location.url('/login');
+                    deferred.reject();
+                }
+            });
+        return deferred.promise;
+    }
 })();

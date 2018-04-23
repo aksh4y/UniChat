@@ -24,7 +24,7 @@
                     vm.error = err;
                 })
         }
-        if(vm.chatId === null)
+        if(vm.chatId == null)
             init();
         else loadChat();
 
@@ -76,7 +76,6 @@
             ChatService
                 .createChat(vm.user._id, vm.friendId)
                 .success(function(i) {
-                    console.log(i);
                     $location.url("/chat/"+i._id);
                 })
                 .error(function () {
@@ -91,6 +90,7 @@
         var vm = this;
         vm.user = currentUser;
         vm.chatId = $routeParams.cid;
+        vm.logout = logout;
         vm.removeParticipant = removeParticipant;
         vm.createMessage = createMessage;
         vm.deleteChat = deleteChat;
@@ -98,11 +98,8 @@
         vm.updateHeader = updateHeader;
         /*vm.updateInfograph = updateInfograph;
         vm.deleteInfograph = deleteInfograph;
-        vm.createTextMessage = createTextMessage;
-        vm.createShapeMessage = createShapeMessage;
         vm.createImageMessage = createImageMessage;
         vm.deleteMessage = deleteMessage;
-        vm.logout = logout;
         vm.searchPhotos = searchPhotos;
         vm.selectPhoto = selectPhoto;*/
         function init() {
@@ -129,8 +126,8 @@
                         })
                         .then(function () {
                             var msgs = [];
+                            for(var i = 0; i < vm.messages.length; i++) {
 
-                            for(i = 0; i < vm.messages.length; i++) {
                                 if (vm.messages[i]._user !== vm.user && vm.messages[i].language_model !== vm.user.language_model) {
                                     var message = vm.messages[i];
                                     message.source = vm.messages[i].language_model;
@@ -140,25 +137,35 @@
                                             var newMsg = msg.data;
                                             newMsg.msg = msg.data.response.translations[0].translation;
                                             msgs.push(newMsg);
-                                            d.resolve(msgs);
+                                            //d.resolve(msgs);
                                         });
                                 }
                                 else {
                                     msgs.push(vm.messages[i]);
                                 }
+                                d.resolve(msgs);
                             }
                             return d.promise;
                         })
                         .then(function (msgs) {
-                            /*msgs = [].slice.call(msgs).sort(function(a,b){
-                                return Date.parse(a.dateCreated) - Date.parse(b.dateCreated);
-                            });*/
                             vm.messages = msgs;
+                            vm.messages.forEach(function (msg) {
+                                if(!msg.hasOwnProperty("sentiment"))
+                                    MessageService.getMessageFeels(msg)
+                                        .then(function (feel) {
+                                            msg.sentiment = feel.data;
+                                            MessageService.updateMessage(msg._id, msg)
+                                                .then(function () {
+                                                    d.resolve(msg);
+                                                }, function () {
+                                                    
+                                                });
+                                            return d.promise;
+                                        }, function (err) {
 
-                            /*msgs.sort(function(a, b) {
-                                return Date.parse(a.dateCreated) - Date.parse(b.dateCreated);
-                            });*/
-                            //vm.messages = msgs;
+                                        });
+                                    return d.promise;
+                            });
                         });
                 });
         }
@@ -201,6 +208,8 @@
         }
 
         function createMessage(text) {
+            if(text == null || text === "")
+                return;
             var msg = {
                 _chat: vm.chatId,
                 _user: vm.user._id,
@@ -254,7 +263,7 @@
         function updateHeader () {
             console.log("update header");
             var name = $('#header').text();
-            if(name === null ||
+            if(name == null ||
                 name === "") {
                 vm.error = "Please do not leave chat name blank";
                 $('#header').text("Enter Chat Title");
@@ -283,137 +292,6 @@
                 })
                 .error(function () {
                     vm.error = "Unable to delete message";
-                });
-        }
-
-        // Save the current positions of the messages
-        function updateMessagesPositions() {
-
-            for (var c in vm.messages) {
-                var d = $(document.getElementById(vm.messages[c]._id));
-                var newPos = {
-                    left: d.css('left'),
-                    top: d.css('top')
-                };
-                MessageService
-                    .updateMessage(vm.messages[c]._id, newPos)
-                    .success(function() {
-                    })
-                    .error(function(err) {
-                        vm.error = "Something went wrong!";
-                    });
-            }
-        }
-
-        // Update all messages
-        function  updateMessages() {
-            var txt = "";
-            var heading = "";
-            for(var c in vm.messages) {
-                switch (vm.messages[c].type) {
-                    case 'TEXT':
-                        txt = $(document.getElementById(vm.messages[c]._id +'div')).text();
-                        break;
-                    case 'JUMBO':
-                        heading = $(document.getElementById(vm.messages[c]._id +'jHeader')).text();
-                        txt = $(document.getElementById(vm.messages[c]._id +'jTxt')).text();
-                        break;
-                    case 'ANCHOR':
-                        heading = $(document.getElementById(vm.messages[c]._id +'aLegend')).text();
-                        txt = $(document.getElementById(vm.messages[c]._id +'aTxt')).text();
-                        break;
-                }
-                var updatedMessage = {
-                    text: txt,
-                    heading: heading
-                };
-                MessageService
-                    .updateMessage(vm.messages[c]._id, updatedMessage)
-                    .success(function(){
-                        return;
-                    })
-                    .error(function () {
-                        vm.error = "Unable to update message";
-                    });
-            }
-        }
-
-        function createImageMessage(_message) {
-            _message.type = "IMAGE";
-            MessageService
-                .createMessage(vm.infographId, _message)
-                .success(function () {
-                    location.reload();
-                })
-                .error(function () {
-                    vm.error = "Unable to create message";
-                });
-        }
-
-        function createTextMessage() {
-
-            var txtType = ($( "#textOptions option:selected").text());
-            var font = "";
-            var type = "";
-            var txt = "";
-            var heading = "";
-            var top = "50%";
-            var left = "50%";
-            switch (txtType) {
-                case 'Heading':
-                    type = 'TEXT';
-                    font = 'Times New Roman';
-                    txt = $('#text1').text();
-                    break;
-                case 'Text':
-                    type = 'TEXT';
-                    font = 'Amatic SC';
-                    txt = $('#text2').text();
-                    break;
-                case 'Jumbotron':
-                    type = 'JUMBO';
-                    heading = $('#jHeader').text();
-                    txt = $('#jTxt').text();
-                    break;
-                case 'Anchor':
-                    type = 'ANCHOR';
-                    heading = $('#aLegend').text();
-                    txt = $('#aTxt').text();
-                    break;
-            }
-
-            var newMessage = {
-                type: type,
-                font: font,
-                text: txt,
-                heading: heading,
-                top: top,
-                left: left};
-            updateInfograph();
-            MessageService
-                .createMessage(vm.infographId, newMessage)
-                .success(function (message) {
-                    location.reload();
-                })
-                .error(function () {
-                    vm.error = "Could not create message";
-                });
-        }
-
-        function createShapeMessage(ele) {
-
-            var newMessage = {
-                type: "SHAPE",
-                font: ele
-            };
-            updateInfograph();
-            MessageService
-                .createMessage(vm.infographId, newMessage)
-                .success(function (message) {
-                    location.reload();
-                })
-                .error(function () {
-                    vm.error = "Could not create message";
                 });
         }
 
@@ -453,6 +331,7 @@
         var vm = this;
         vm.user = currentUser;
         vm.chatId = $routeParams.cid;
+        vm.logout = logout;
         function init() {
             ChatService.findChatById(vm.chatId)
                 .success(function (chat) {
@@ -518,6 +397,14 @@
             else
                 vm.friends = {};
         };*/
+
+        function logout() {
+            UserService
+                .logout()
+                .then(function (reponse) {
+                    $location.url('/login');
+                });
+        }
 
         function getArrayWithoutUser(arr) {
             var index = null;

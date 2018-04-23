@@ -9,6 +9,7 @@ module.exports = function (app, messageModel) {
     app.put("/api/message/:mid", updateMessage);
     app.delete("/api/message/:mid", deleteMessage);
     app.post("/api/message/translate", translateMessage);
+    app.post("/api/message/feels", getMessageFeels);
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({ dest: __dirname+'/../../public/uploads' });
@@ -72,6 +73,16 @@ module.exports = function (app, messageModel) {
     function translateMessage(req, res) {
         var message = req.body;
         return messageModel.translateMessage(message)
+            .then(function (response) {
+                res.json(response);
+            },function (err) {
+                res.sendStatus(404).send(err);
+            });
+    }
+
+    function getMessageFeels(req, res) {
+        var message = req.body;
+        return messageModel.getMessageFeels(message)
             .then(function (response) {
                 res.json(response);
             },function (err) {

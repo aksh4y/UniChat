@@ -200,15 +200,19 @@ module.exports = function (app, userModel) {
     }
 
     function unregisterUser(req, res) {
-        if(req.user && req.user._id == req.params.userId) {
+        //console.log(req.user._id);
+        /*if(req.user._id == req.params.userId) {*/
             userModel
                 .deleteUser(req.params.userId)
                 .then(function (status) {
                     res.sendStatus(200);
+                },
+                function f() {
+                    res.sendStatus(401);
                 });
-        } else {
-            res.sendStatus(401);
-        }
+        /*} else {*/
+
+        //}
     }
 
     function register(req, res) {
@@ -398,7 +402,6 @@ module.exports = function (app, userModel) {
     }
 
     function isAdmin(req, res) {
-        console.log(req.user);
         res.send(req.isAuthenticated() && req.user.role && req.user.role.indexOf('ADMIN') > -1 ? req.user : '0');
     }
 

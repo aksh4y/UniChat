@@ -6,7 +6,7 @@
         .module('UniChat')
         .controller('AdminController', AdminController);
 
-    function AdminController(UserService) {
+    function AdminController(UserService, ChatService) {
         var model = this;
 
         model.deleteUser = deleteUser;
@@ -14,6 +14,7 @@
 
         function init() {
             findAllUsers();
+            findAllChats();
         }
         init();
 
@@ -21,6 +22,13 @@
             UserService
                 .updateUser(user)
                 .then(findAllUsers);
+        }
+
+        function findAllChats() {
+            ChatService.findAllChats()
+                .then(function (chats) {
+                    model.chats = chats.data;
+                })
         }
 
         function findAllUsers() {

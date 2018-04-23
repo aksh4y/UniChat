@@ -68,17 +68,28 @@
                 }, function () {
                     vm.error = "Could not remove!"
                 })
-        }
+        };
+        vm.logout = function () {
+            UserService
+                .logout()
+                .then(function (reponse) {
+                    $location.url('/login');
+                });
+        };
     }
 
     function FriendController(currentUser, UserService, $location) {
         var vm = this;
         vm.user = currentUser;
+        vm.logout = logout;
 
-        function init(){
-
+        function logout() {
+            UserService
+                .logout()
+                .then(function (reponse) {
+                    $location.url('/login');
+                });
         }
-        init();
 
         function getArrayWithoutUser(arr) {
             var index = null;

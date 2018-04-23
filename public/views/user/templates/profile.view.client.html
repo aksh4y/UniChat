@@ -82,10 +82,10 @@
 
         <a class="btn btn-primary btn-block" id="update"
            ng-click="model.update(model.user)">Update</a>
-        <a ng-if="model.user.role == 'USER'" class="btn btn-info btn-block" id="dashboard"
+        <a class="btn btn-info btn-block" id="dashboard"
            href="#/dashboard">Dashboard</a>
 
-        <a ng-if="model.user.role == 'ADMIN'" class="btn btn-info btn-block"
+        <a ng-if="model.user.role == 'ADMIN'" class="btn btn-success btn-block"
            href="#/admin">Admin Dashboard</a>
         <a class="btn btn-warning  btn-block"
            ng-click="model.logout()">Logout</a>

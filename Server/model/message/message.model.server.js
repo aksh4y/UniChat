@@ -21,8 +21,8 @@ module.exports = function () {
     });
     var NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js');
     var natural_language_understanding = new NaturalLanguageUnderstandingV1({
-        'username': process.env.IBM_WATSON_USERNAME,
-        'password': process.env.IBM_WATSON_PASSWORD,
+        'username': process.env.IBM_WATSON_NLU_USERNAME,
+        'password': process.env.IBM_WATSON_NLU_PASSWORD,
         'version': '2018-03-16'
     });
 
@@ -33,6 +33,7 @@ module.exports = function () {
         "updateMessage": updateMessage,
         "deleteMessage": deleteMessage,
         "translateMessage": translateMessage,
+        "getMessageFeels": getMessageFeels,
         "setModel": setModel
     };
     return api;
@@ -56,6 +57,69 @@ module.exports = function () {
                 }
             });
         return d.promise;
+        /*var d = q.defer();
+        messageModel
+            .create(message, function (err, c) {
+                if (err) {
+                    d.reject(err);
+                }
+                else {
+                    d.resolve(c);
+                }
+                return d.promise;
+            })
+            .then(function (c) {
+                c.source = c.language_model;
+                c.destination = "en";
+                translateMessage(c)
+                    .then(function (translatedMsg) {
+                        console.log("translation");
+                        delete c.destination;
+                        delete c.source;
+                        var msg = {
+                            msg: translatedMsg.data.response.translations[0].translation,
+                            c: c
+                        };
+                        d.resolve(msg);
+                    }, function (err) {
+                        d.reject(err);
+                    });
+                return d.promise;
+            })
+            .then(function (msg) {
+                getMessageFeels(msg)
+                    .then(function (feel) {
+                        var c = msg.c;
+                        c.sentiment = feel;
+                        feel.extra = msg;
+                        console.log("update msg");
+                        console.log(c);
+                        model.messageModel.updateMessage(c._id, c)
+                            .then(function (newMsg) {
+                                d.resolve(newMsg)
+                            }, function (err) {
+                                d.reject(err);
+                            });
+                        return d.promise();
+                    })
+                    .then(function (c) {
+                        console.log("final stage");
+                        console.log(c);
+                        model.chatModel
+                            .findChatById(c._chat)
+                            .then(function (chat) {
+                                console.log("push msg");
+                                chat[0].messages.push(c._id);
+                                chat[0].save();
+                                d.resolve(c);
+                            }, function (err) {
+                                d.reject(err);
+                            });
+                        return d.promise;
+                    });
+                return d.promise;
+            });
+        return d.promise;*/
     }
 
     function findAllMessagesForChat(chatId){
@@ -70,6 +134,27 @@ module.exports = function () {
             }, function (error) {
                 return error;
             });
+    }
+
+    function getMessageFeels(messagePackage) {
+        var d = q.defer();
+
+        var parameters = {
+            "text": messagePackage.msg,
+            "features": {
+                "sentiment": {}
+            }
+        };
+
+
+        natural_language_understanding.analyze(parameters, function(err, response) {
+            if (err)
+                d.reject(err);
+            else
+                d.resolve(response.sentiment.document.label);
+        });
+
+        return d.promise;
     }
 
     function translateMessage(messagePackage) {

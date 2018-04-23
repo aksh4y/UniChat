@@ -8,6 +8,7 @@ module.exports = function (app, chatModel) {
     app.delete("/api/chat/:cid", deleteChat);
     app.get("/api/chats/:userId", findAllChatsForUser);
     app.get("/api/chat/:cid", findChatById);
+    app.get("/api/admin/chat", findAllChats);
     app.post("/api/chat", createChat);
     app.delete("/api/chat/:cid/user/:uid", deleteChatParticipant);
     app.get("/api/chat", findPublicChats);
@@ -18,10 +19,28 @@ module.exports = function (app, chatModel) {
         chatModel
             .findChatById(chatId)
             .then(function (chat) {
+                /*if(req.user._id == chat[0]._user || req.user.role == 'ADMIN') {
+                    console.log("found");
+                    res.json(chat);
+                }
+                else
+                    res.sendStatus(404).send({msg: 'unauthorized'});*/
                 res.json(chat);
             }, function (err) {
                 res.sendStatus(404).send(err);
             });
+    }
+
+    function findAllChats(req, res) {
+        if(req.user && req.user.role==='ADMIN') {
+            chatModel
+                .findAllChats()
+                .then(function (users) {
+                    res.json(users);
+                });
+        } else {
+            res.json({});
+        }
     }
 
     function findPublicChats(req, res) {

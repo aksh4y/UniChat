@@ -13,7 +13,8 @@
             "findMessageById": findMessageById,
             "updateMessage": updateMessage,
             "deleteMessage": deleteMessage,
-            "translateMessage": translateMessage
+            "translateMessage": translateMessage,
+            "getMessageFeels": getMessageFeels
         };
 
         return api;
@@ -36,6 +37,10 @@
 
         function translateMessage(messagePackage) {
             return $http.post("api/message/translate", messagePackage);
+        }
+
+        function getMessageFeels(messagePackage) {
+            return $http.post("/api/message/feels", messagePackage);
         }
 
         function findMessageById(messageId) {

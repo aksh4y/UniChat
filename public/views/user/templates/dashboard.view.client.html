@@ -7,9 +7,9 @@
     <div class="row container-fluid">
         <div class="col-xs-12">
             <div class="navbar-text pull-right hidden-xs hidden-sm">
-                <a href="#/chat"
+                <a ng-click="model.logout()"
                    class="navbar-link">
-                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-log-out"></span>
                 </a>
             </div>
             <div class="navbar-text pull-left">
@@ -74,7 +74,6 @@
                     <br/>
                 </div>
                 <div class="info-title">{{chat.name}}</div>
-                <div class="info-title" style="font-size: 10px">{{chat.dateCreated}}</div>
             </div>
         </div>
     </div>

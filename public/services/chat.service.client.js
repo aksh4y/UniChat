@@ -11,6 +11,7 @@
         var api = {
             "createChat": createChat,
             "findChatById": findChatById,
+            "findAllChats": findAllChats,
             "deleteChat": deleteChat,
             "updateChat": updateChat,
             "findAllChatsForUser": findAllChatsForUser,
@@ -26,6 +27,10 @@
 
         function findPublicChats() {
             return $http.get("/api/chat");
+        }
+
+        function findAllChats() {
+            return $http.get("/api/admin/chat");
         }
 
         function createChat(userId, friendId) {

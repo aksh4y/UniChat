@@ -17,6 +17,7 @@
             "findUsersByUsername": findUsersByUsername,
             "updateUser": updateUser,
             "deleteUser": deleteUser,
+            "unregisterUser": unregisterUser,
             "recover": recover,
             "addFriend": addFriend,
             "removeFriend": removeFriend
@@ -51,6 +52,9 @@
                 .then(function (response) {
                     return response.data;
                 });
+        }
+        function unregisterUser(userId) {
+            return $http.delete('/api/user/' + userId);
         }
 
         function logout() {
@@ -107,7 +111,7 @@
         }
 
         function deleteUser(userId) {
-            return $http.delete("/api/user/"+userId);
+            return $http.delete("/api/admin/user/"+userId);
         }
     }
 })();

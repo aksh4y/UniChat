@@ -402,6 +402,14 @@ textarea {
     margin-bottom: 5px;
 }
 
+.feel {
+    font-size: 35px;
+    font-family: 'Amatic SC', 'cursive';
+    color: white;
+    margin-top: 1%;
+    text-decoration: underline;
+}
+
 .logo {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -446,7 +454,7 @@ body {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%)
@@ -456,7 +464,7 @@ body {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%)
@@ -548,6 +556,7 @@ body {
     user-drag: none;
     -webkit-user-drag: none;
     padding-top: 1%;
+    margin: 0 auto;
 }
 
 .header {
