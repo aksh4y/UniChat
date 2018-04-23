@@ -74,6 +74,14 @@
                     currentUser: checkAdmin
                 }
             })
+            .when("/admin/create", {
+                templateUrl: 'views/admin/templates/admin-add-user.view.html',
+                controller: "AdminController",
+                controllerAs: "model",
+                resolve: {
+                    currentUser: checkAdmin
+                }
+            })
             .when("/test", {
                 templateUrl: 'views/chat/templates/chat-edit.view.client.html'
             })

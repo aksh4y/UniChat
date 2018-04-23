@@ -80,12 +80,8 @@
     <div class="col-xs-2"></div>
 </div>
 
-<div ng-show="model.error" class="alert alert-warning alert-dismissible">
-    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
-</div>
-<div ng-show="model.success" class="alert alert-success alert-dismissible">
-
-</div>
+<div class="alert alert-danger" ng-show="model.error">{{model.error}}</div>
+<div class="alert alert-success" ng-show="model.message">{{model.message}}</div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="row container-fluid">
