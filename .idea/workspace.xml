@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dfce8ff-10f0-49bb-9008-5a1ff1c44f43" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/views/admin/templates/admin-chats.view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/views/admin/templates/admin-users.view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/model/chat/chat.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/chat/chat.model.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/model/message/message.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/message/message.model.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/model/user/user.model.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/model/user/user.model.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/services/chat.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/services/chat.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/services/message.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/services/message.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/services/user.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/services/user.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/services/chat.service.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/services/chat.service.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/services/message.service.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/services/message.service.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/services/user.service.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/services/user.service.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/admin/controllers/admin.controller.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/admin/controllers/admin.controller.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/admin/templates/admin.view.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/admin/templates/admin.view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/chat/templates/chat-add-friend.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chat/templates/chat-add-friend.view.client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chat/templates/chat-edit.view.client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/controllers/user.controller.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/templates/dashboard.view.client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/user/templates/profile.view.client.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/user/templates/profile.view.client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/express.js" beforeDir="false" afterPath="$PROJECT_DIR$/express.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -87,11 +64,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat.controller.client.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chat.controller.client.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="160" column="52" selection-start-line="160" selection-start-column="52" selection-end-line="160" selection-end-column="52" />
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="express.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/express.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -168,7 +154,6 @@
       <find>createmess</find>
       <find>getmessagefeel</find>
       <find>trans</find>
-      <find>feel</find>
       <find>getmessagefee</find>
       <find>translation</find>
       <find>.feel</find>
@@ -177,6 +162,7 @@
       <find>friendsco</find>
       <find>=== nu</find>
       <find>save</find>
+      <find>feel</find>
     </findStrings>
     <replaceStrings>
       <replace>message</replace>
@@ -192,7 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/login.html" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/css/login_style.css" />
         <option value="$PROJECT_DIR$/public/views/user/templates/login-local.view.client.html" />
@@ -243,6 +228,7 @@
         <option value="$PROJECT_DIR$/public/views/user/templates/friends.view.client.html" />
         <option value="$PROJECT_DIR$/public/views/user/controllers/user.dashboard.client.js" />
         <option value="$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js" />
+        <option value="$PROJECT_DIR$/express.js" />
       </list>
     </option>
   </component>
@@ -515,12 +501,12 @@
       <workItem from="1524347128430" duration="9577000" />
       <workItem from="1524368613926" duration="15264000" />
       <workItem from="1524404007637" duration="28169000" />
-      <workItem from="1524435518153" duration="9913000" />
+      <workItem from="1524435518153" duration="10174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167185000" />
+    <option name="totallyTimeSpent" value="167446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -552,7 +538,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/views/infograph/templates/infograph-edit.view.client.html" />
     <entry file="file://$PROJECT_DIR$/Server/model/infographic/infographic.schema.server.js" />
     <entry file="file://$PROJECT_DIR$/Server/services/flickr.service.server.js" />
     <entry file="file://$PROJECT_DIR$/public/views/components/templates/editors/text-new.view.client.html" />
@@ -884,7 +869,14 @@
     <entry file="file://$PROJECT_DIR$/public/views/chat/controllers/chat.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="160" column="52" selection-start-line="160" selection-start-column="52" selection-end-line="160" selection-end-column="52" />
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>

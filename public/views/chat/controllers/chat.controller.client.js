@@ -158,7 +158,7 @@
                                                 .then(function () {
                                                     d.resolve(msg);
                                                 }, function () {
-                                                    
+
                                                 });
                                             return d.promise;
                                         }, function (err) {
