@@ -13,6 +13,23 @@ A MEAN stack web app which lets users chat with each other either or in a group 
 * Sentiment analysis using IBM Watson Natural Language Understanding
 * Platform: MEAN - MongoDb, Express.js, AngularJS, node.js
 
+## Languages Supported
+* English
+* Chinese
+* Traditional Chinese
+* French
+* Italian
+* Arabic
+* Portuguese
+* Japanese
+* Korean
+* Turkish
+* Polish
+* Spanish
+* Dutch
+* German
+* Russian
+
 ## Screenshots
 ![img](Images/Welcome.PNG)
 ![img](Images/Sign%20up.PNG)
