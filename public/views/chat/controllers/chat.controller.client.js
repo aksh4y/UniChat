@@ -127,7 +127,6 @@
                         .then(function () {
                             var msgs = [];
                             for(var i = 0; i < vm.messages.length; i++) {
-
                                 if (vm.messages[i]._user !== vm.user && vm.messages[i].language_model !== vm.user.language_model) {
                                     var message = vm.messages[i];
                                     message.source = vm.messages[i].language_model;

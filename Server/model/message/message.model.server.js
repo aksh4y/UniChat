@@ -149,7 +149,7 @@ module.exports = function () {
 
         natural_language_understanding.analyze(parameters, function(err, response) {
             if (err)
-                d.reject(err);
+                d.resolve("Neutral");
             else
                 d.resolve(response.sentiment.document.label);
         });
