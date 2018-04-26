@@ -239,11 +239,13 @@
         }
 
         function deleteChat() {
-            console.log("Delete");
             ChatService
                 .deleteChat(vm.chatId)
                 .success(function () {
-                    $location.url('/dashboard');
+                    if(vm.user.role === 'ADMIN')
+                        $location.url('/admin/chats');
+                    else
+                        $location.url('/dashboard');
                 })
                 .error(function () {
                     console.log("error");

@@ -148,30 +148,30 @@ module.exports = function () {
         var d = q.defer();
         chatModel.findById(chatId)
             .then(function (chat) {
-                var promises = [];
                 var participants = chat.participants;
                 participants.forEach(function(uid) {
-                    var promise = model.userModel.findUserById(uid)
+                    model.userModel.findUserById(uid)
                         .then(function (user) {
                             user.chats.splice(user.chats.indexOf(chatId), 1);
                             user.save();
                         });
-                    promises.push(promise);
                 });
-                d.resolve(promises);
-            }, function (err) {
-                d.reject(err);
+                d.resolve(chat);
+                return d.promise;
             })
             .then(function(res) {
-                deleteChatMessages(chatId)
-                    .then(function (res) {
-                        chatModel.remove({_id: chatId})
-                            .then(function(res) {
-                                d.resolve(res);
-                            })
-                    });
-                return d.promise;
-            });
+                    deleteChatMessages(chatId)
+                        .then(function (res) {
+                            chatModel.remove({_id: chatId})
+                                .then(function(res) {
+                                    d.resolve(res);
+                                })
+                        });
+                    return d.promise;
+                },
+                function (reason) {
+                    d.reject(reason);
+                });
         return d.promise;
     }
 
@@ -189,11 +189,12 @@ module.exports = function () {
                     model.messageModel
                         .deleteMessage(message._id)
                         .then(function(res) {
-                            deferred.resolve();
+                            //deferred.resolve();
                         }, function(err) {
                             deferred.reject(err);
                         });
                 });
+                deferred.resolve(messages);
             }, function (err) {
                 deferred.reject(err);
             });
