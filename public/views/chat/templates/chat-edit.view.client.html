@@ -51,7 +51,7 @@
 <div class="container-fluid">
     <div id="wrapper" data-spy="scroll" data-target="#spy">
         <div class="row">
-            <div class="col-md-2 hidden-md">
+            <div class="col-md-2 hidden-xs">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper" class="">
                     <nav id="spy">
@@ -87,7 +87,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-xs-12">
                 <h1 id="header" class="header" contenteditable="true" data-toggle="tooltip" data-placement="top" title="Click to change chat title">{{model.chat.name}}</h1>
                 <a id="save-header" ng-click="model.updateHeader()" class="btn btn-info pull-right hidden">Save</a>
                 <h3 class="text-center">Created on: {{model.chatDate}}</h3>
@@ -98,7 +98,7 @@
                             <!-- POSITION MESSAGES -->
                             <div id="messages" ng-repeat="message in model.messages | orderBy: 'dateCreated'">
                                 <div ng-if="message._user !== model.user._id" class="col-xs-12">
-                                    <div class="col-xs-2 feel">{{message.sentiment}}</div>
+                                    <div class="col-xs-1 feel">{{message.sentiment}}</div>
                                     <div class="col-xs-9">
                                         <div class="chat-container">
                                             <div class="col-xs-2 right-bordered">
@@ -142,37 +142,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-2 feel pull-right" style="text-align: right">{{message.sentiment}}</div>
+                                    <div class="col-xs-1 feel pull-right" style="text-align: right">{{message.sentiment}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="col-xs-2"></div>
-                        <div class="col-xs-7">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-7 col-xs-8">
                             <textarea id="message-constructor" class="form-control" data-toggle="tooltip" data-placement="top" title="Press shift + enter to send!" rows="3" id="msg" ng-model="msg"></textarea>
                         </div>
-                        <div class="col-xs-1">
+                        <div class="col-md-3 col-xs-4">
                             <a class="btn btn-success btn-block" ng-click="model.createMessage(msg)" id="send-msg">Send</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+</div>
 
 
 
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="row container-fluid">
-            <div class="col-xs-12">
-                <div class="navbar-text pull-right">
-                    <a href="#/profile" class="navbar-link">
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#/profile" class="navbar-link">
                       <span class="glyphicon glyphicon-user">
                       </span>
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+

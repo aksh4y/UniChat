@@ -31,6 +31,13 @@
     width: 40%;
 }
 
+@media(max-width: 480px) {
+    .chat-container {
+        width: 140%;
+    }
+}
+
+
 /* Darker chat container */
 .darker {
     border-color: #ccc;
