@@ -96,7 +96,7 @@ module.exports = function (app, userModel) {
     passport.use(new FacebookStrategy({
         clientID: process.env.FACEBOOK_CLIENT_ID,
         clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-        callbackURL: "/auth/facebook/callback",
+        callbackURL: "https://unichat-app.herokuapp.com/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'email'],
         enableProof: true
     }, facebookStrategy));
