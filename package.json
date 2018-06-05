@@ -1,14 +1,13 @@
 {
-  "name": "infographer",
+  "name": "UniChat",
   "version": "1.0.0",
-  "description": "Infographer: Present data better",
+  "description": "UniChat: Chat Beyond Boundaries",
   "main": "server.js",
   "private": "true",
   "dependencies": {
     "Q": "^1.0.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.1",
-    "bootstrap-colorpicker": "^2.5.1",
     "cookie-parser": "1.4.3",
     "express": "^4.13.4",
     "express-session": "1.15.1",
